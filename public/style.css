@@ -4316,3 +4316,12 @@ footer {
         font-size: 0.85rem !important;
     }
 }
+
+/* ═══════════════════════════════════════════════
+   HIDE POCKET PHONE ON MOBILE ONLY
+   ═══════════════════════════════════════════════ */
+@media (max-width: 768px) {
+    .owner-pocket-phone {
+        display: none !important;
+    }
+}

@@ -334,7 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
 *Current POS:* ${currentPOS}
 *Message:* ${message}`;
 
-            const waUrl = `https://wa.me/919395256576?text=${encodeURIComponent(msg)}`;
+            const waUrl = `https://wa.me/919939525676?text=${encodeURIComponent(msg)}`;
             window.open(waUrl, '_blank');
 
             // Show success

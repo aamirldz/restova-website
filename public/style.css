@@ -4273,3 +4273,46 @@ footer {
         margin-top: 8px !important;
     }
 }
+
+/* ═══════════════════════════════════════════════
+   FIX DESKTOP TEXT & PRODUCT TABS ON MOBILE
+   ═══════════════════════════════════════════════ */
+@media (max-width: 576px) {
+    /* Hide the paragraph text only on mobile */
+    .hide-on-mobile {
+        display: none !important;
+    }
+    
+    /* Make the section title smaller on mobile to save space */
+    .section-title {
+        font-size: 2rem !important;
+    }
+
+    /* Force the Product Tabs into a single scrollable horizontal row */
+    .product-tabs {
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 8px !important; /* Space for scrollbar if visible */
+        gap: 8px !important;
+    }
+    
+    /* Hide scrollbar for cleaner look */
+    .product-tabs::-webkit-scrollbar {
+        display: none;
+    }
+    .product-tabs {
+        scrollbar-width: none;
+    }
+
+    /* Keep the buttons small enough to fit side-by-side */
+    .product-tab {
+        flex: 0 0 auto !important; /* Prevent shrinking */
+        scroll-snap-align: start;
+        padding: 8px 16px !important;
+        font-size: 0.85rem !important;
+    }
+}

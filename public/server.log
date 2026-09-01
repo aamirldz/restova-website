@@ -1,0 +1,15 @@
+::1 - - [01/Sep/2026 17:38:35] "GET / HTTP/1.1" 200 -
+::1 - - [01/Sep/2026 17:38:35] "GET /main.js HTTP/1.1" 304 -
+::1 - - [01/Sep/2026 17:38:35] "GET /style.css HTTP/1.1" 304 -
+::1 - - [01/Sep/2026 17:38:35] "GET /logo.png HTTP/1.1" 304 -
+::1 - - [01/Sep/2026 17:38:35] "GET /images/wf-2-billing.png HTTP/1.1" 304 -
+::1 - - [01/Sep/2026 17:38:35] "GET /images/wf-3-kot.png HTTP/1.1" 304 -
+::1 - - [01/Sep/2026 17:38:35] "GET /images/wf-1-table.png HTTP/1.1" 304 -
+::1 - - [01/Sep/2026 17:38:35] "GET /images/wf-4-kds.png HTTP/1.1" 304 -
+::1 - - [01/Sep/2026 17:38:35] "GET /images/wf-6-sales.png HTTP/1.1" 304 -
+::1 - - [01/Sep/2026 17:38:35] "GET /images/wf-5-settle.png HTTP/1.1" 304 -
+::1 - - [01/Sep/2026 17:38:35] "GET /images/cpt-1.png HTTP/1.1" 304 -
+::1 - - [01/Sep/2026 17:38:35] "GET /images/cpt-3.png HTTP/1.1" 304 -
+::1 - - [01/Sep/2026 17:38:35] "GET /images/cpt-2.png HTTP/1.1" 304 -
+::1 - - [01/Sep/2026 17:38:35] "GET /images/cpt-4.png HTTP/1.1" 304 -
+::1 - - [01/Sep/2026 17:38:35] "GET /favicon.ico HTTP/1.1" 304 -

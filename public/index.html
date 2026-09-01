@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restova — Restaurant POS, Captain App & Kitchen Display System</title>
+    <meta name="description" content="Restova is a complete restaurant operating system. POS billing, Captain ordering app, and Kitchen Display — all connected in real time. Works offline. Built for busy Indian restaurants.">
+    <meta property="og:title" content="Restova — One Restaurant System">
+    <meta property="og:description" content="POS, Captain App, and KDS connected in real time. Works offline. Built for busy restaurants.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="canonical" href="https://restova.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- NAVIGATION                             -->
+<!-- ═══════════════════════════════════════ -->
+<nav id="navbar">
+    <div class="nav-inner container">
+        <a href="#" class="nav-logo">
+            <img src="/logo.png" alt="Restova" width="36" height="36">
+            <span>Restova</span>
+        </a>
+        <div class="nav-links" id="navLinks">
+            <a href="#products">Products</a>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#faq">FAQ</a>
+        </div>
+        <div class="nav-actions">
+            
+            <a href="#register" class="btn-primary btn-sm">Register Restaurant</a>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+        <a href="#products">Products</a>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <hr>
+        
+        <a href="#register" class="btn-primary">Register Restaurant</a>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- HERO                                    -->
+<!-- ═══════════════════════════════════════ -->
+<section id="hero">
+    <div class="hero-inner container">
+        <div class="hero-text">
+            <div class="hero-badge">Restaurant Operating System</div>
+            <h1>One system for your<br>entire restaurant.</h1>
+            <p class="hero-desc">POS billing, Captain ordering, and Kitchen Display — connected in real time. Works when the internet doesn't. Built for busy Indian restaurants.</p>
+            <div class="hero-ctas">
+                <a href="#register" class="btn-primary btn-lg">Register Your Restaurant</a>
+                <a href="#products" class="btn-secondary btn-lg">See How It Works</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <strong>100%</strong>
+                    <span>Offline Capable</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>&lt;50ms</strong>
+                    <span>Real-Time Sync</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>3-in-1</strong>
+                    <span>Connected System</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-product-stage">
+            <!-- Desktop frame — POS Terminal -->
+            <div class="device-desktop">
+                <div class="device-bezel">
+                    <div class="device-screen">
+                        <img src="images/wf-1-table.png" alt="Restova POS Terminal">
+                    </div>
+                </div>
+                <div class="device-stand"></div>
+            </div>
+            <!-- Tablet frame — KDS -->
+            <div class="device-tablet">
+                <div class="device-bezel">
+                    <div class="device-screen">
+                        <img src="images/kds-1.png" alt="Restova KDS">
+                    </div>
+                </div>
+            </div>
+            <!-- Phone frame — Captain App -->
+            <div class="device-phone">
+                <div class="device-bezel">
+                    <div class="device-notch"></div>
+                    <div class="device-screen">
+                        <img src="images/cpt-2.png" alt="Restova Captain App">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-gradient"></div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- PRODUCT ECOSYSTEM                       -->
+<!-- ═══════════════════════════════════════ -->
+<section id="products" class="section">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-eyebrow">Products</span>
+            <h2 class="section-title">Three products.<br>One connected system.</h2>
+            <p class="section-subtitle">Each product handles a critical part of restaurant operations. Together, they eliminate paper tickets, shouting across rooms, and lost orders.</p>
+        </div>
+        <div class="product-tabs reveal">
+            <button class="product-tab active" data-tab="pos">
+                <span class="tab-icon">🖥</span> Restova POS
+            </button>
+            <button class="product-tab" data-tab="captain">
+                <span class="tab-icon">📱</span> Captain App
+            </button>
+            <button class="product-tab" data-tab="kds">
+                <span class="tab-icon">🍳</span> Kitchen Display
+            </button>
+        </div>
+
+        <!-- POS Panel -->
+        <div class="product-panel active" data-panel="pos">
+            <div class="product-content reveal" style="display:block;">
+                <div class="workflow-container">
+                    <div class="workflow-steps">
+                        <div class="w-step active" data-img="wf-1" onclick="switchWorkflow(this)">
+                            <h4>1. Tables & Orders</h4>
+                            <p>Select tables and punch items instantly. Taxes auto-calculate.</p>
+                            <div class="w-step-progress"><div class="w-step-progress-bar"></div></div>
+                        </div>
+                        <div class="w-step" data-img="wf-2" onclick="switchWorkflow(this)">
+                            <h4>2. Instant KOTs</h4>
+                            <p>Send tickets directly to the kitchen display with one tap.</p>
+                            <div class="w-step-progress"><div class="w-step-progress-bar"></div></div>
+                        </div>
+                        <div class="w-step" data-img="wf-3" onclick="switchWorkflow(this)">
+                            <h4>3. Fast Billing</h4>
+                            <p>Split bills, apply discounts, and accept any payment method.</p>
+                            <div class="w-step-progress"><div class="w-step-progress-bar"></div></div>
+                        </div>
+                        <div class="w-step" data-img="wf-4" onclick="switchWorkflow(this)">
+                            <h4>4. Sales Tracking</h4>
+                            <p>Track daily revenue and completed orders seamlessly.</p>
+                            <div class="w-step-progress"><div class="w-step-progress-bar"></div></div>
+                        </div>
+                    </div>
+                    <div class="pnl-device pnl-desktop">
+                        <div class="pnl-bezel">
+                            <div class="pnl-bezel-dot"></div>
+                            <div class="workflow-visual">
+                                <img src="images/wf-2-billing.png" id="wf-1" class="active contain-img" alt="POS 1">
+                                <img src="images/wf-3-kot.png" id="wf-2" class="contain-img" alt="POS 2">
+                                <img src="images/wf-5-settle.png" id="wf-3" class="contain-img" alt="POS 3">
+                                <img src="images/wf-6-sales.png" id="wf-4" class="contain-img" alt="POS 4">
+                            </div>
+                        </div>
+                        <div class="pnl-stand"></div>
+                        <div class="pnl-base"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Captain Panel -->
+        <div class="product-panel" data-panel="captain">
+            <div class="product-content reveal" style="display:block;">
+                <div class="workflow-container">
+                    <div class="workflow-steps">
+                        <div class="w-step active" data-img="cpt-1" onclick="switchWorkflow(this)">
+                            <h4>1. Select Table</h4>
+                            <p>Captain selects a table to begin taking the order.</p>
+                            <div class="w-step-progress"><div class="w-step-progress-bar"></div></div>
+                        </div>
+                        <div class="w-step" data-img="cpt-2" onclick="switchWorkflow(this)">
+                            <h4>2. View Menu</h4>
+                            <p>Browse the digital menu directly at the table.</p>
+                            <div class="w-step-progress"><div class="w-step-progress-bar"></div></div>
+                        </div>
+                        <div class="w-step" data-img="cpt-3" onclick="switchWorkflow(this)">
+                            <h4>3. Add Items</h4>
+                            <p>Punch in items seamlessly while talking to the guest.</p>
+                            <div class="w-step-progress"><div class="w-step-progress-bar"></div></div>
+                        </div>
+                        <div class="w-step" data-img="cpt-4" onclick="switchWorkflow(this)">
+                            <h4>4. Instant Sync</h4>
+                            <p>The order instantly appears on the main POS terminal and KDS.</p>
+                            <div class="w-step-progress"><div class="w-step-progress-bar"></div></div>
+                        </div>
+                    </div>
+                    <div class="pnl-device pnl-phone" id="captainDevice" style="position:relative; transition: all 0.5s ease;">
+                        <div class="pnl-bezel">
+                            <div class="pnl-notch"></div>
+                            <div class="workflow-visual">
+                                <img src="images/cpt-1.png" id="cpt-1" class="active contain-img" alt="Captain 1">
+                                <img src="images/cpt-2.png" id="cpt-2" class="contain-img" alt="Captain 2">
+                                <img src="images/cpt-3.png" id="cpt-3" class="contain-img" alt="Captain 3">
+                                <img src="images/cpt-4.png" id="cpt-4" class="contain-img" alt="Captain 4">
+                            </div>
+                            <div class="pnl-home-bar"></div>
+                        </div>
+                        <div class="pnl-stand cpt-stand"></div>
+                        <div class="pnl-base cpt-base"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- KDS Panel -->
+        <div class="product-panel" data-panel="kds">
+            <div class="product-content reveal" style="display:block;">
+                <div class="workflow-container">
+                    <div class="workflow-steps">
+                        <div class="w-step active" data-img="kds-img-1" onclick="switchWorkflow(this)">
+                            <h4>1. Order Received</h4>
+                            <p>KOT arrives with a live timer showing preparation time.</p>
+                            <div class="w-step-progress"><div class="w-step-progress-bar"></div></div>
+                        </div>
+                        <div class="w-step" data-img="kds-img-2" onclick="switchWorkflow(this)">
+                            <h4>2. Mark Ready</h4>
+                            <p>Chef taps to mark items ready, updating the progress bar.</p>
+                            <div class="w-step-progress"><div class="w-step-progress-bar"></div></div>
+                        </div>
+                        <div class="w-step" data-img="kds-img-3" onclick="switchWorkflow(this)">
+                            <h4>3. Order Served</h4>
+                            <p>Order is cleared from the screen when perfectly served.</p>
+                            <div class="w-step-progress"><div class="w-step-progress-bar"></div></div>
+                        </div>
+                    </div>
+                    <div class="pnl-device pnl-tablet">
+                        <div class="pnl-bezel">
+                            <div class="pnl-cam"></div>
+                            <div class="workflow-visual">
+                                <img src="images/kds-1.png" id="kds-img-1" class="active contain-img" alt="KDS 1">
+                                <img src="images/kds-2.png" id="kds-img-2" class="contain-img" alt="KDS 2">
+                                <img src="images/kds-3.png" id="kds-img-3" class="contain-img" alt="KDS 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- CONNECTED WORKFLOW                      -->
+<!-- ═══════════════════════════════════════ -->
+<section id="workflow" class="section">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-eyebrow">How It Works</span>
+            <h2 class="section-title">From seating to settlement.<br>Every step connected.</h2>
+        </div>
+        <div class="workflow-track">
+            <div class="workflow-line"><div class="workflow-line-fill" id="workflowFill"></div></div>
+            <div class="workflow-steps">
+                <div class="workflow-step active" data-step="1">
+                    <div class="step-icon">🪑</div>
+                    <div class="step-content">
+                        <div class="step-label">Guest Seated</div>
+                        <div class="step-desc">Table status changes to occupied on all devices</div>
+                    </div>
+                </div>
+                <div class="workflow-step" data-step="2">
+                    <div class="step-icon">📱</div>
+                    <div class="step-content">
+                        <div class="step-label">Captain Takes Order</div>
+                        <div class="step-desc">Order placed from Captain App at the table</div>
+                    </div>
+                </div>
+                <div class="workflow-step" data-step="3">
+                    <div class="step-icon">🖥</div>
+                    <div class="step-content">
+                        <div class="step-label">POS Updated</div>
+                        <div class="step-desc">Cart and table status sync to the billing counter instantly</div>
+                    </div>
+                </div>
+                <div class="workflow-step" data-step="4">
+                    <div class="step-icon">🍳</div>
+                    <div class="step-content">
+                        <div class="step-label">KOT in Kitchen</div>
+                        <div class="step-desc">Kitchen Display shows the order — chef starts cooking</div>
+                    </div>
+                </div>
+                <div class="workflow-step" data-step="5">
+                    <div class="step-icon">🧾</div>
+                    <div class="step-content">
+                        <div class="step-label">Bill Printed</div>
+                        <div class="step-desc">GST-compliant bill with CGST + SGST breakdown</div>
+                    </div>
+                </div>
+                <div class="workflow-step" data-step="6">
+                    <div class="step-icon">✅</div>
+                    <div class="step-content">
+                        <div class="step-label">Settled</div>
+                        <div class="step-desc">Payment received — table becomes available again</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- REAL-TIME SYNC                          -->
+<!-- ═══════════════════════════════════════ -->
+<section id="realtime" class="section section-dark">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-eyebrow" style="color:#e63946">Real-Time</span>
+            <h2 class="section-title" style="color:#fff">Every device sees every change.<br>Instantly.</h2>
+            <p class="section-subtitle" style="color:rgba(255,255,255,.6)">When a Captain adds an item, the POS and KDS update within milliseconds. No refresh. No delay. WebSocket-powered synchronization across every connected device.</p>
+        </div>
+        <div class="sync-demo reveal">
+            <div class="sync-device" id="syncCaptain">
+                <div class="sync-device-label">Captain App</div>
+                <div class="sync-device-screen">
+                    <div class="sync-item" id="syncItem1">+ Butter Chicken ×1</div>
+                    <div class="sync-item">+ Garlic Naan ×2</div>
+                </div>
+                <div class="sync-pulse" id="syncPulse1"></div>
+            </div>
+            <div class="sync-arrow">
+                <svg width="40" height="24"><path d="M0 12h30m0 0l-6-6m6 6l-6 6" stroke="#e63946" stroke-width="2" fill="none"/></svg>
+            </div>
+            <div class="sync-device" id="syncPOS">
+                <div class="sync-device-label">POS</div>
+                <div class="sync-device-screen">
+                    <div class="sync-table-status">
+                        <span>Table 2</span>
+                        <span class="sync-status" id="syncTableStatus">Available</span>
+                    </div>
+                    <div class="sync-cart-preview" id="syncCartPreview">—</div>
+                </div>
+                <div class="sync-pulse" id="syncPulse2"></div>
+            </div>
+            <div class="sync-arrow">
+                <svg width="40" height="24"><path d="M0 12h30m0 0l-6-6m6 6l-6 6" stroke="#e63946" stroke-width="2" fill="none"/></svg>
+            </div>
+            <div class="sync-device" id="syncKDS">
+                <div class="sync-device-label">Kitchen Display</div>
+                <div class="sync-device-screen">
+                    <div class="sync-kot" id="syncKot">Waiting for orders...</div>
+                </div>
+                <div class="sync-pulse" id="syncPulse3"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- OFFLINE-FIRST                           -->
+<!-- ═══════════════════════════════════════ -->
+<section id="offline" class="section">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-eyebrow">Reliability</span>
+            <h2 class="section-title">Internet goes down.<br>Your restaurant doesn't.</h2>
+            <p class="section-subtitle">Restova stores everything locally on each device. When connection drops, billing, KOT, and table management continue working. When it returns, everything syncs automatically.</p>
+        </div>
+        <div class="offline-demo reveal">
+            <div class="offline-step active" data-state="online">
+                <div class="offline-indicator green"></div>
+                <div class="offline-label">Online</div>
+                <div class="offline-desc">All devices syncing normally</div>
+            </div>
+            <div class="offline-connector"></div>
+            <div class="offline-step" data-state="lost">
+                <div class="offline-indicator red"></div>
+                <div class="offline-label">Connection Lost</div>
+                <div class="offline-desc">Internet drops unexpectedly</div>
+            </div>
+            <div class="offline-connector"></div>
+            <div class="offline-step" data-state="working">
+                <div class="offline-indicator amber"></div>
+                <div class="offline-label">Working Offline</div>
+                <div class="offline-desc">POS keeps operating normally — orders queue locally</div>
+            </div>
+            <div class="offline-connector"></div>
+            <div class="offline-step" data-state="synced">
+                <div class="offline-indicator green"></div>
+                <div class="offline-label">Reconnected &amp; Synced</div>
+                <div class="offline-desc">All queued changes push automatically</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- FEATURES                                -->
+<!-- ═══════════════════════════════════════ -->
+<section id="features" class="section section-alt">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-eyebrow">Features</span>
+            <h2 class="section-title">Everything a restaurant needs.<br>Nothing it doesn't.</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-group reveal">
+                <div class="feature-icon">🖥</div>
+                <h3>Operations</h3>
+                <ul>
+                    <li>Visual table management with multi-floor layouts</li>
+                    <li>Fast billing with cart, modifiers, and discounts</li>
+                    <li>Dine-in, takeaway, and delivery order types</li>
+                    <li>Complimentary orders and service charges</li>
+                    <li>Automatic settlement and 3 AM table reset</li>
+                </ul>
+            </div>
+            <div class="feature-group reveal">
+                <div class="feature-icon">👨‍🍳</div>
+                <h3>Staff</h3>
+                <ul>
+                    <li>Captain App for tableside ordering</li>
+                    <li>Staff PIN authentication with role-based access</li>
+                    <li>Owner, Admin, and Staff permission levels</li>
+                    <li>Staff sales performance tracking</li>
+                    <li>Device-level role assignment</li>
+                </ul>
+            </div>
+            <div class="feature-group reveal">
+                <div class="feature-icon">🍳</div>
+                <h3>Kitchen</h3>
+                <ul>
+                    <li>Kitchen Display System with real-time orders</li>
+                    <li>KOT thermal printing</li>
+                    <li>Station filtering — Hot Kitchen, Tandoor, Bar</li>
+                    <li>Bump-to-ready workflow</li>
+                    <li>Order timing for kitchen discipline</li>
+                </ul>
+            </div>
+            <div class="feature-group reveal">
+                <div class="feature-icon">📊</div>
+                <h3>Business</h3>
+                <ul>
+                    <li>Dashboard with revenue, orders, daily goals</li>
+                    <li>GST reports with CGST + SGST breakdown</li>
+                    <li>Sales by category, staff, payment method, hour</li>
+                    <li>Executive summary and Excel export</li>
+                    <li>Historical report archives</li>
+                </ul>
+            </div>
+            <div class="feature-group reveal">
+                <div class="feature-icon">💳</div>
+                <h3>Payments</h3>
+                <ul>
+                    <li>Cash, Card, UPI, Due, and Other methods</li>
+                    <li>Split payment support</li>
+                    <li>GST-compliant bill printing</li>
+                    <li>Configurable tax rates (5%, 12%, 18%)</li>
+                    <li>Service charge configuration</li>
+                </ul>
+            </div>
+            <div class="feature-group reveal">
+                <div class="feature-icon">🔒</div>
+                <h3>Reliability</h3>
+                <ul>
+                    <li>100% offline-capable — works without internet</li>
+                    <li>Real-time WebSocket sync across all devices</li>
+                    <li>Auto-sync queue when connection returns</li>
+                    <li>Multi-device with JWT authentication</li>
+                    <li>Cloud backup on Cloudflare global network</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- HQ OVERVIEW                             -->
+<!-- ═══════════════════════════════════════ -->
+<section id="owner" class="section section-alt">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-eyebrow">Owner Dashboard</span>
+            <h2 class="section-title">Your restaurant,<br>in your pocket.</h2>
+            <p class="section-subtitle">Manage menus, view real-time reports, and configure settings from anywhere. The Owner Dashboard gives you full control over your business, even when you're miles away.</p>
+        </div>
+        
+        <div class="owner-advanced-showcase reveal">
+            <!-- White Desktop Monitor -->
+            <div class="white-monitor">
+                <div class="monitor-bezel">
+                    <div class="monitor-screen">
+                        <img src="images/owner-dashboard.png" id="o-img-1" class="active" alt="Live Dashboard" loading="lazy">
+                        <img src="images/owner-menu.png" id="o-img-2" alt="Menu Management" loading="lazy">
+                        <img src="images/owner-report.png" id="o-img-3" alt="Deep Reporting" loading="lazy">
+                        <img src="images/owner-setting.png" id="o-img-4" alt="Remote Settings" loading="lazy">
+                    </div>
+                </div>
+                <div class="monitor-stand"></div>
+                <div class="monitor-base"></div>
+                        <!-- Pocket Phone -->
+            <div class="owner-pocket-phone">
+                <div class="pnl-device pnl-phone">
+                    <div class="pnl-bezel">
+                        <div class="pnl-cam"></div>
+                        <div class="workflow-visual phone-logo-screen">
+                            <div class="splash-inner">
+                                <img src="/logo.png" alt="Restova App" class="app-logo active" style="opacity: 1 !important; visibility: visible !important; display: block !important; width: 90px !important; height: 90px !important; position: static !important; transform: none !important; z-index: 9999 !important; object-fit: contain !important; filter: none !important;">
+                                <span class="app-name">Restova POS</span>
+                            </div>
+                        </div>
+                        <div class="pnl-home"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            </div>
+
+
+            <!-- Interactive Controls -->
+            <div class="owner-controls" id="ownerControls">
+                <div class="o-step active" onclick="switchOwnerStep(1)">
+                    <h4>Live Dashboard</h4>
+                    <div class="o-progress"><div class="o-bar"></div></div>
+                </div>
+                <div class="o-step" onclick="switchOwnerStep(2)">
+                    <h4>Menu Management</h4>
+                    <div class="o-progress"><div class="o-bar"></div></div>
+                </div>
+                <div class="o-step" onclick="switchOwnerStep(3)">
+                    <h4>Deep Reporting</h4>
+                    <div class="o-progress"><div class="o-bar"></div></div>
+                </div>
+                <div class="o-step" onclick="switchOwnerStep(4)">
+                    <h4>Remote Settings</h4>
+                    <div class="o-progress"><div class="o-bar"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- PRICING                                 -->
+<!-- ═══════════════════════════════════════ -->
+<section id="pricing" class="section section-alt">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-eyebrow">Pricing</span>
+            <h2 class="section-title">Simple, transparent pricing.</h2>
+            <p class="section-subtitle">All plans include cloud hosting, automatic updates, and support. No hidden fees. No per-transaction charges.</p>
+        </div>
+        <div class="pricing-cards reveal">
+            <div class="price-card">
+                <div class="price-plan">Starter</div>
+                <div class="price-amount">₹850</div>
+                <div class="price-period">per month</div>
+                <div class="price-desc">For small restaurants getting started</div>
+                <ul class="price-features">
+                    <li><strong>1</strong> POS Terminal</li>
+                    <li><strong>1</strong> Kitchen Display</li>
+                    <li><strong>1</strong> Captain App</li>
+                    <li>⬇ GST Excel Exports</li>
+                    <li>⬇ Exec Summary Reports</li>
+                    <li>⬇ Daily/Weekly/Monthly Reports</li>
+                    <li>WhatsApp &amp; Phone Call Support</li>
+                </ul>
+                <a href="#register" class="btn-secondary btn-block">Get Started</a>
+            </div>
+            <div class="price-card featured">
+                <div class="price-badge">Most Popular</div>
+                <div class="price-plan">Growth</div>
+                <div class="price-amount">₹1,250</div>
+                <div class="price-period">per month</div>
+                <div class="price-desc">For growing restaurants with teams</div>
+                <ul class="price-features">
+                    <li><strong>1</strong> POS Terminal</li>
+                    <li><strong>2</strong> Kitchen Displays</li>
+                    <li><strong>3</strong> Captain Apps</li>
+                    <li>⬇ GST Excel Exports</li>
+                    <li>⬇ Exec Summary Reports</li>
+                    <li>⬇ Daily/Weekly/Monthly Reports</li>
+                    <li>WhatsApp &amp; Phone Call Support</li>
+                </ul>
+                <a href="#register" class="btn-primary btn-block">Get Started</a>
+            </div>
+            <div class="price-card">
+                <div class="price-plan">Enterprise</div>
+                <div class="price-amount">₹3,999</div>
+                <div class="price-period">per month</div>
+                <div class="price-desc">For multi-outlet chains</div>
+                <ul class="price-features">
+                    <li><strong>3</strong> POS Terminals</li>
+                    <li><strong>5</strong> Kitchen Displays</li>
+                    <li><strong>8</strong> Captain Apps</li>
+                    <li>⬇ GST Excel Exports</li>
+                    <li>⬇ Exec Summary Reports</li>
+                    <li>⬇ Daily/Weekly/Monthly Reports</li>
+                    <li>WhatsApp &amp; Phone Call Support</li>
+                </ul>
+                <a href="#register" class="btn-secondary btn-block">Contact Sales</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- FAQ                                     -->
+<!-- ═══════════════════════════════════════ -->
+<section id="faq" class="section">
+    <div class="container container-narrow">
+        <div class="section-header reveal">
+            <span class="section-eyebrow">FAQ</span>
+            <h2 class="section-title">Common questions.</h2>
+        </div>
+        <div class="faq-list reveal">
+            <div class="faq-item">
+                <button class="faq-question">What is Restova?<span class="faq-icon">+</span></button>
+                <div class="faq-answer"><p>Restova is a complete restaurant operating system that includes a POS (Point of Sale) for billing, a Captain App for tableside ordering, and a Kitchen Display System (KDS) for kitchen order management. All three products work together in real time.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What's the difference between POS, Captain, and KDS?<span class="faq-icon">+</span></button>
+                <div class="faq-answer"><p><strong>POS</strong> sits at the billing counter — handles tables, billing, payments, and reports. <strong>Captain App</strong> is for waiters — they take orders at the table on their phone. <strong>KDS</strong> is the kitchen screen — chefs see orders in real time and mark them as ready. All three sync automatically.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Does it work without internet?<span class="faq-icon">+</span></button>
+                <div class="faq-answer"><p>Yes. Restova is built offline-first. All data is stored locally on each device. When internet drops, you can continue billing, printing KOTs, and managing tables. When connection returns, all changes sync automatically to the cloud.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">How does real-time sync work?<span class="faq-icon">+</span></button>
+                <div class="faq-answer"><p>Restova uses WebSocket connections between all devices. When a Captain adds an item to a table, the POS and KDS update within milliseconds. No page refresh needed. Changes propagate to all connected devices automatically.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Can I use my existing thermal printer?<span class="faq-icon">+</span></button>
+                <div class="faq-answer"><p>Restova works with standard thermal printers that support browser printing. You can configure separate printers for KOT (kitchen) and customer bills. No special hardware purchase required.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">How does setup work?<span class="faq-icon">+</span></button>
+                <div class="faq-answer"><p>Register your restaurant on our website. Our team will contact you within 24 hours. We set up your Restova instance with your menu, table layout, tax configuration, and staff accounts. Your restaurant-specific POS is deployed on Cloudflare's global network for maximum speed and reliability.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Which restaurants is Restova suitable for?<span class="faq-icon">+</span></button>
+                <div class="faq-answer"><p>Restova is designed for dine-in restaurants, cafes, QSRs, cloud kitchens, and multi-outlet chains across India. Whether you have 5 tables or 50, the system scales to your needs.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Is my data secure?<span class="faq-icon">+</span></button>
+                <div class="faq-answer"><p>All data is stored on Cloudflare's global network with D1 database technology. Each restaurant gets its own isolated database. Device authentication uses JWT tokens, and admin access requires SHA-256 hashed credentials. Your data is encrypted in transit and at rest.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- REGISTER                                -->
+<!-- ═══════════════════════════════════════ -->
+<section id="register" class="section section-dark">
+    <div class="container">
+        <div class="register-layout reveal">
+            <div class="register-info">
+                <span class="section-eyebrow" style="color:#e63946">Get Started</span>
+                <h2 class="section-title" style="color:#fff">Register your restaurant.</h2>
+                <p style="color:rgba(255,255,255,.6);font-size:1.05rem;line-height:1.7;margin-bottom:2rem">Fill in your details and our team will set up your complete Restova system within 24 hours. No credit card required to start.</p>
+                <div class="trust-points">
+                    <div class="trust-point">
+                        <span class="trust-icon">⚡</span>
+                        <div>
+                            <strong>Quick Setup</strong>
+                            <span>Restaurant ready in 24 hours</span>
+                        </div>
+                    </div>
+                    <div class="trust-point">
+                        <span class="trust-icon">🔧</span>
+                        <div>
+                            <strong>Full Configuration</strong>
+                            <span>Menu, tables, tax — all set up for you</span>
+                        </div>
+                    </div>
+                    <div class="trust-point">
+                        <span class="trust-icon">📞</span>
+                        <div>
+                            <strong>Direct Support</strong>
+                            <span>WhatsApp + email support from day one</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form class="register-form" id="registerForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="regName">Restaurant Name *</label>
+                        <input type="text" id="regName" required placeholder="e.g. King Chinese Bowl">
+                    </div>
+                    <div class="form-group">
+                        <label for="regOwner">Owner Name *</label>
+                        <input type="text" id="regOwner" required placeholder="e.g. Aamir Khan">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="regPhone">Phone *</label>
+                        <input type="tel" id="regPhone" required placeholder="+91 98765 43210">
+                    </div>
+                    <div class="form-group">
+                        <label for="regEmail">Email *</label>
+                        <input type="email" id="regEmail" required placeholder="owner@restaurant.com">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="regCity">City *</label>
+                        <input type="text" id="regCity" required placeholder="e.g. Chandigarh">
+                    </div>
+                    <div class="form-group">
+                        <label for="regTables">Number of Tables</label>
+                        <input type="number" id="regTables" placeholder="e.g. 20" min="1">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="regCurrentPOS">Current POS System</label>
+                    <select id="regCurrentPOS">
+                        <option value="">Select...</option>
+                        <option value="none">No POS — using paper/manual</option>
+                        <option value="petpooja">Petpooja</option>
+                        <option value="posist">Posist</option>
+                        <option value="torqus">Torqus</option>
+                        <option value="dotpe">DotPe</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="regMessage">Message (optional)</label>
+                    <textarea id="regMessage" rows="3" placeholder="Tell us about your restaurant or any specific requirements..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary btn-lg btn-block" id="registerBtn">
+                    Register via WhatsApp
+                </button>
+                <p class="form-note">We'll contact you on WhatsApp within 24 hours to set up your restaurant.</p>
+                <div class="form-success" id="formSuccess" style="display:none">
+                    <div class="success-icon">✅</div>
+                    <h3>Registration Sent!</h3>
+                    <p>We've received your details. Our team will contact you on WhatsApp within 24 hours.</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- FOOTER                                  -->
+<!-- ═══════════════════════════════════════ -->
+<footer id="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="/logo.png" alt="Restova" width="32" height="32">
+                    <span>Restova</span>
+                </div>
+                <p>Complete restaurant operating system. POS, Captain App, and Kitchen Display — connected in real time.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Products</h4>
+                <a href="#products">Restova POS</a>
+                <a href="#products">Captain App</a>
+                <a href="#products">Kitchen Display</a>
+                <a href="#hq">Restova HQ</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+                <a href="#register">Register</a>
+                <a href="mailto:aamirldz07@gmail.com">Support</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="mailto:aamirldz07@gmail.com">aamirldz07@gmail.com</a>
+                <a href="https://wa.me/919939525676" target="_blank">+91 9939525676</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Restova Technologies Pvt. Ltd. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="/main.js"></script>
+</body>
+</html>

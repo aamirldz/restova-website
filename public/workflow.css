@@ -1,0 +1,137 @@
+/* Workflow Component */
+.workflow-container {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    background: #fff;
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
+
+@media (max-width: 992px) {
+    .workflow-container {
+        flex-direction: column-reverse;
+        padding: 20px;
+    }
+    .workflow-steps {
+        flex: 1 !important;
+        width: 100%;
+    }
+}
+
+.workflow-steps {
+    flex: 0 0 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.w-step {
+    padding: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+}
+
+.w-step::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: var(--brand);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+    transform-origin: left center;
+}
+
+.w-step:hover {
+    background: rgba(230, 57, 70, 0.03);
+}
+
+.w-step.active {
+    background: rgba(230, 57, 70, 0.05);
+    border-color: rgba(230, 57, 70, 0.2);
+}
+
+.w-step.active::before {
+    transform: scaleY(1);
+}
+
+.w-step h4 {
+    margin: 0 0 6px 0;
+    font-size: 1.05rem;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+}
+
+.w-step.active h4 {
+    color: var(--brand);
+}
+
+.w-step p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-m);
+    line-height: 1.5;
+}
+
+.workflow-visual {
+    flex: 1;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #f1f5f9;
+    border: 1px solid var(--border);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    aspect-ratio: 16 / 10;
+    width: 100%;
+}
+
+.workflow-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    position: absolute;
+    top: 0; left: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: scale(0.98);
+}
+
+.workflow-visual img.contain-img {
+    object-fit: contain;
+    background: #fff;
+}
+
+.workflow-visual img.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 2;
+}
+
+/* Progress bar for auto-play */
+.w-step-progress {
+    height: 3px;
+    background: rgba(230, 57, 70, 0.2);
+    border-radius: 2px;
+    margin-top: 10px;
+    overflow: hidden;
+    display: none;
+}
+.w-step.active .w-step-progress {
+    display: block;
+}
+.w-step-progress-bar {
+    height: 100%;
+    background: var(--brand);
+    width: 0%;
+}

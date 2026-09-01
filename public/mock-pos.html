@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="pos.css">
+  <style>
+    body { margin: 0; padding: 0; background: var(--bg); overflow: hidden; }
+    /* Hide scrollbars for iframe */
+    ::-webkit-scrollbar { display: none; }
+    
+    /* Tweaks to fit inside the mockup frame */
+    #app { 
+      padding-left: 170px; /* sidebar width */
+      height: 100vh;
+      display: flex;
+    }
+    .sidebar { width: 170px; position: fixed; left: 0; top: 0; bottom: 0; }
+    .main-content { flex: 1; display: flex; flex-direction: column; width: 100%; position: relative; }
+    .topbar { height: 50px; }
+    .screen-content { flex: 1; overflow: hidden; padding: 12px; }
+    .table-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    
+    .floating-cart-panel {
+      position: absolute; right: 0; top: 50px; bottom: 0; width: 280px; 
+      background: var(--glass); backdrop-filter: var(--frost); 
+      border-left: 1px solid var(--border);
+      display: flex; flex-direction: column; z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+          <div class="brand-icon" style="background:#fff;border-radius:8px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;">
+            <img src="logo.png" style="width: 100%; height: 100%; object-fit: contain; transform: scale(1.6);" />
+          </div>
+          <div class="brand-text">
+              <span class="brand-name">Restova</span>
+              <span class="brand-sub">POS System</span>
+          </div>
+      </div>
+      <nav class="sidebar-nav">
+          <a href="#" class="nav-item active"><span class="nav-icon">📋</span><span class="nav-label">Billing</span><span class="nav-badge pulse">POS</span></a>
+          <a href="#" class="nav-item"><span class="nav-icon">🍳</span><span class="nav-label">Kitchen (KDS)</span></a>
+          <a href="#" class="nav-item"><span class="nav-icon">🪑</span><span class="nav-label">Tables</span></a>
+          <a href="#" class="nav-item"><span class="nav-icon">🧾</span><span class="nav-label">Sales History</span></a>
+          <div class="nav-divider"></div>
+          <a href="#" class="nav-item"><span class="nav-icon">📊</span><span class="nav-label">Dashboard</span></a>
+          <a href="#" class="nav-item"><span class="nav-icon">🍽️</span><span class="nav-label">Menu</span></a>
+          <a href="#" class="nav-item"><span class="nav-icon">⚙️</span><span class="nav-label">Settings</span></a>
+      </nav>
+      <div class="sidebar-footer">
+          <div class="user-profile">
+              <div class="user-avatar">AK</div>
+              <div class="user-info">
+                  <span class="user-name">Aamir</span>
+                  <span class="user-role">Owner</span>
+              </div>
+          </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+          <div class="topbar-left" style="display: flex; align-items: center; padding-left: 16px;">
+              <span style="font-weight:700;font-size:1.1rem">Tables</span>
+          </div>
+          <div class="topbar-right" style="flex-shrink: 0; padding-right: 16px;">
+              <div class="topbar-clock">02:30 PM</div>
+              <div class="topbar-status"><div class="status-dot connected"></div><span class="status-text">Online</span></div>
+          </div>
+      </header>
+
+      <div class="screen-content" style="padding-right: 280px; overflow-y: auto;">
+        <div class="table-grid-container">
+          <div style="font-weight:700;margin-bottom:8px;font-size:.9rem;color:var(--text-s)">Main Hall</div>
+          <div class="table-grid">
+            <div class="table-cell available">
+              <div style="display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 4px;">
+                <span class="table-number">T1</span>
+              </div>
+              <span class="table-status-label">Available</span>
+            </div>
+            
+            <div class="table-cell occupied">
+              <span class="table-amount">₹890</span>
+              <span class="table-timer">12m</span>
+              <div style="display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 4px;">
+                <span class="table-number">T2</span>
+              </div>
+              <span class="table-status-label">2 guests</span>
+            </div>
+
+            <div class="table-cell bill-pending">
+              <span class="table-amount">₹2,100</span>
+              <span class="table-timer">42m</span>
+              <div style="display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 4px;">
+                <span class="table-number">T3</span>
+              </div>
+              <span class="table-status-label">BILL</span>
+            </div>
+
+            <div class="table-cell printed">
+              <span class="table-amount">₹1,240</span>
+              <span class="table-timer">28m</span>
+              <div style="display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 4px;">
+                <span class="table-number">T4</span>
+              </div>
+              <span class="table-status-label">PRINTED</span>
+            </div>
+            
+            <div class="table-cell occupied">
+              <span class="table-amount">₹560</span>
+              <span class="table-timer">5m</span>
+              <div style="display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 4px;">
+                <span class="table-number">T5</span>
+              </div>
+              <span class="table-status-label">1 guest</span>
+            </div>
+            
+            <div class="table-cell available">
+              <div style="display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 4px;">
+                <span class="table-number">T6</span>
+              </div>
+              <span class="table-status-label">Available</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- CART -->
+      <div class="floating-cart-panel" style="position: absolute; right: 0; top: 50px; bottom: 0; width: 280px; background: #fff; border-left: 1px solid var(--border); display: flex; flex-direction: column;">
+        <div class="cart-header">
+          <div class="cart-header-top">
+            <span class="cart-title">Order #1024</span>
+          </div>
+          <div style="display:flex;gap:4px;margin-top:4px;">
+            <span class="cart-table-tag">T2</span><span class="cart-table-tag">DINE IN</span>
+          </div>
+        </div>
+        <div class="cart-items-area" style="flex: 1; padding: 8px; overflow-y: auto;">
+            <div class="cart-item">
+              <div class="cart-item-info">
+                <div class="cart-item-name-row">
+                  <span class="cart-item-veg nonveg"></span>
+                  <span class="cart-item-name">Butter Chicken</span>
+                  <span style="font-size:.55rem;color:#fff;background:var(--ok);padding:1px 6px;border-radius:8px;margin-left:4px;font-weight:700">KOT</span>
+                </div>
+                <div class="cart-item-unit-price">₹450 each</div>
+              </div>
+              <div class="cart-item-qty-col">
+                <span style="font-weight:800;font-size:.9rem;padding:0 8px">1</span>
+              </div>
+              <div class="cart-item-total">₹450</div>
+            </div>
+            <div class="cart-item">
+              <div class="cart-item-info">
+                <div class="cart-item-name-row">
+                  <span class="cart-item-veg veg"></span>
+                  <span class="cart-item-name">Garlic Naan</span>
+                </div>
+                <div class="cart-item-unit-price">₹60 each</div>
+              </div>
+              <div class="cart-item-qty-col">
+                <span style="font-weight:800;font-size:.9rem;padding:0 8px">3</span>
+              </div>
+              <div class="cart-item-total">₹180</div>
+            </div>
+        </div>
+        <div class="cart-footer">
+          <div class="bill-line"><span>Subtotal</span><span>₹630</span></div>
+          <div class="bill-line"><span>Taxes (5%)</span><span>₹31.50</span></div>
+          <div class="bill-line order-total"><span>Total</span><span>₹661.50</span></div>
+          <div class="cart-actions-bar" style="display:flex;gap:4px;margin-top:8px;">
+            <button class="btn-primary" style="flex:1;padding:12px;border:none;border-radius:var(--r);background:var(--grad);color:#fff;font-weight:700;">🖨️ KOT</button>
+            <button class="btn-secondary" style="flex:1;padding:12px;border:1px solid var(--border);border-radius:var(--r);background:#fff;font-weight:700;">🧾 Bill</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+/* Remove CSS transforms that blur text */
+.workflow-visual img {
+    transform: none !important;
+    transition: opacity 0.4s ease !important; /* ONLY transition opacity */
+    /* Let the browser handle standard image downscaling */
+    image-rendering: auto !important; 
+    object-fit: cover !important; 
+}
+
+.workflow-visual img.contain-img {
+    object-fit: contain !important;
+}
+
+.workflow-visual img.active {
+    transform: none !important;
+}

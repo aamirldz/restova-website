@@ -4244,3 +4244,32 @@ footer {
     background: rgba(0, 0, 0, 0.05) !important;
     border-color: rgba(0, 0, 0, 0.3) !important;
 }
+
+/* ═══════════════════════════════════════════════
+   OWNER CONTROLS MOBILE 2x2 GRID (Compact)
+   ═══════════════════════════════════════════════ */
+@media (max-width: 576px) {
+    .owner-controls {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+    .o-step {
+        padding: 12px 8px !important;
+    }
+    .o-step h4 {
+        font-size: 0.85rem !important;
+        margin: 0 !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .o-step-progress {
+        margin-top: 8px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .o-progress {
+        margin-top: 8px !important;
+    }
+}

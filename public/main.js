@@ -584,4 +584,39 @@ document.addEventListener('DOMContentLoaded', () => {
     if (ownerSection) {
         startOwnerAutoplay(1);
     }
+
+    // Add Mobile Workflow Navigation Arrows dynamically
+    document.querySelectorAll('.workflow-steps').forEach(stepsContainer => {
+        const navDiv = document.createElement('div');
+        navDiv.className = 'workflow-mobile-nav';
+        navDiv.innerHTML = `
+            <button class="w-nav-btn prev">❮</button>
+            <button class="w-nav-btn next">❯</button>
+        `;
+        stepsContainer.appendChild(navDiv);
+
+        const prevBtn = navDiv.querySelector('.prev');
+        const nextBtn = navDiv.querySelector('.next');
+
+        prevBtn.addEventListener('click', () => {
+            const currentStep = stepsContainer.querySelector('.w-step.active');
+            if(!currentStep) return;
+            let prevStep = currentStep.previousElementSibling;
+            if (!prevStep || !prevStep.classList.contains('w-step')) {
+                const allSteps = stepsContainer.querySelectorAll('.w-step');
+                prevStep = allSteps[allSteps.length - 1];
+            }
+            switchWorkflow(prevStep, 'stop');
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const currentStep = stepsContainer.querySelector('.w-step.active');
+            if(!currentStep) return;
+            let nextStep = currentStep.nextElementSibling;
+            if (!nextStep || !nextStep.classList.contains('w-step')) {
+                nextStep = stepsContainer.querySelector('.w-step');
+            }
+            switchWorkflow(nextStep, 'stop');
+        });
+    });
 });

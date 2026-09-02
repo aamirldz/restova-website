@@ -4968,9 +4968,9 @@ footer {
     .hero-text { left: 0 !important; }
     .hero-product-stage { 
         left: 0 !important; 
-        transform: scale(0.8) !important; 
+        transform: scale(0.9) !important; 
         transform-origin: top center !important; 
-        margin-bottom: -100px !important;
+        margin-bottom: -50px !important;
     }
     /* Lock devices to desktop proportions to preserve the exact cluster layout */
     .device-desktop .device-bezel { width: 460px !important; }
@@ -4981,8 +4981,8 @@ footer {
 
 @media (max-width: 768px) {
     .hero-product-stage { 
-        transform: scale(0.65) !important; 
-        margin-bottom: -180px !important; 
+        transform: scale(0.75) !important; 
+        margin-bottom: -120px !important; 
     }
     .device-desktop .device-bezel { width: 460px !important; }
     .device-macbook { width: 340px !important; left: -100px !important; bottom: -30px !important; }
@@ -4992,8 +4992,8 @@ footer {
 
 @media (max-width: 576px) {
     .hero-product-stage { 
-        transform: scale(0.48) !important; 
-        margin-bottom: -250px !important; 
+        transform: scale(0.6) !important; 
+        margin-bottom: -180px !important; 
     }
     .device-desktop .device-bezel { width: 460px !important; }
     .device-macbook { width: 340px !important; left: -100px !important; bottom: -30px !important; }

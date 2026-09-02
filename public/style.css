@@ -4967,6 +4967,8 @@ footer {
 @media (max-width: 992px) {
     .hero-text { left: 0 !important; }
     .hero-product-stage { 
+        display: block !important;
+        min-height: 400px !important;
         left: 0 !important; 
         transform: scale(0.9) !important; 
         transform-origin: top center !important; 
@@ -4981,6 +4983,8 @@ footer {
 
 @media (max-width: 768px) {
     .hero-product-stage { 
+        display: block !important;
+        min-height: 400px !important;
         transform: scale(0.75) !important; 
         margin-bottom: -120px !important; 
     }
@@ -4992,6 +4996,8 @@ footer {
 
 @media (max-width: 576px) {
     .hero-product-stage { 
+        display: block !important;
+        min-height: 400px !important;
         transform: scale(0.6) !important; 
         margin-bottom: -180px !important; 
     }

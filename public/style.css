@@ -4966,19 +4966,27 @@ footer {
 
 @media (max-width: 992px) {
     .hero-text { left: 0 !important; }
-    .device-macbook { left: -20px !important; width: 280px !important; }
-    .device-tablet { right: -10px !important; width: 200px !important; }
-    .device-phone { left: -30px !important; }
+    .hero-product-stage { left: 0 !important; min-height: 320px !important; }
+    .device-desktop .device-bezel { width: 360px !important; }
+    .device-macbook { left: -50px !important; width: 260px !important; bottom: -20px !important; }
+    .device-tablet { right: -20px !important; width: 200px !important; }
+    .device-phone { left: -30px !important; width: 70px !important; bottom: 180px !important; }
 }
+
 @media (max-width: 768px) {
-    .device-macbook { left: 0px !important; width: 240px !important; bottom: -10px !important; }
-    .device-tablet { right: 0px !important; width: 160px !important; bottom: 10px !important; }
-    .device-phone { left: -10px !important; }
+    .hero-product-stage { min-height: 250px !important; transform: scale(0.9) !important; transform-origin: top center !important; }
+    .device-desktop .device-bezel { width: 280px !important; }
+    .device-macbook { left: -30px !important; width: 200px !important; bottom: -10px !important; }
+    .device-tablet { right: -10px !important; width: 150px !important; bottom: 0 !important; }
+    .device-phone { left: -20px !important; width: 60px !important; bottom: 140px !important; }
 }
+
 @media (max-width: 576px) {
-    .device-macbook { margin-right: -20px !important; width: 160px !important; bottom: 10px !important; }
-    .device-tablet { margin-left: -20px !important; width: 140px !important; bottom: 30px !important; }
-    .device-phone { bottom: -5px !important; }
+    .hero-product-stage { min-height: 200px !important; transform: scale(0.85) !important; }
+    .device-desktop .device-bezel { width: 240px !important; }
+    .device-macbook { left: -20px !important; width: 170px !important; bottom: -10px !important; }
+    .device-tablet { right: 0px !important; width: 130px !important; bottom: 10px !important; }
+    .device-phone { left: -15px !important; width: 50px !important; bottom: 120px !important; }
 }
 .device-phone .device-bezel::before,
 .device-phone .device-bezel::after {

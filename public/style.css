@@ -12,12 +12,14 @@
   --warning: #d97706;
   --error: #dc2626;
   --info: #2563eb;
-  --bg: #f5f5f7;
+  --bg: #ffffff;
+  --bg-alt: #f3f4f6; /* obvious grey */
+  --bg-tint: #fee2e2; /* obvious red tint */
   --card: #ffffff;
-  --text: #111827;
-  --text-s: #4b5563;
+  --text: #172033;
+  --text-s: #64748b;
   --text-m: #9ca3af;
-  --border: rgba(0,0,0,.08);
+  --border: #e5e7eb;
   --font: 'Inter',system-ui,-apple-system,sans-serif;
   --mono: 'JetBrains Mono',monospace;
   --r-sm: 8px;
@@ -42,7 +44,8 @@ button,input,select,textarea{font-family:inherit;font-size:inherit}
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
 .container-narrow{max-width:800px;margin:0 auto;padding:0 24px}
 .section{padding:100px 0}
-.section-alt{background:#fff}
+.section-alt{background:var(--bg-alt)}
+.section-tint{background:var(--bg-tint)}
 .section-dark{background:var(--dark)}
 .section-header{text-align:center;margin-bottom:60px}
 .section-eyebrow{display:block;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--primary);margin-bottom:12px}
@@ -1823,10 +1826,10 @@ button,input,select,textarea{font-family:inherit;font-size:inherit}
     margin: 0 !important;
 }
 .device-tablet .device-bezel {
-    width: 220px !important;
-    padding: 8px !important;
-    border: 2px solid #444 !important;
-    border-radius: 14px !important;
+    width: 250px !important;
+    padding: 6px !important;
+    border: 1px solid #444 !important;
+    border-radius: 12px !important;
     background: #111 !important;
     box-shadow: 0 20px 45px rgba(0,0,0,0.5) !important;
 }
@@ -1838,24 +1841,24 @@ button,input,select,textarea{font-family:inherit;font-size:inherit}
 .device-phone {
     position: absolute !important;
     z-index: 3 !important;
-    bottom: -20px !important;
+    bottom: -15px !important;
     left: -10px !important;
     margin: 0 !important;
 }
 .device-phone .device-bezel {
-    width: 120px !important;
-    padding: 8px 5px !important;
-    border: 2px solid #444 !important;
-    border-radius: 22px !important;
+    width: 75px !important;
+    padding: 3px 3px !important;
+    border: 1px solid #444 !important;
+    border-radius: 10px !important;
     background: #111 !important;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5) !important;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5) !important;
 }
 .device-phone .device-notch {
-    width: 36px !important;
+    width: 24px !important;
     height: 4px !important;
     background: #333 !important;
     border-radius: 8px !important;
-    margin: 2px auto 5px auto !important;
+    margin: 2px auto 4px auto !important;
 }
 .device-phone .device-screen {
     aspect-ratio: 9/16 !important;
@@ -2439,10 +2442,7 @@ footer {
 }
 
 /* ═══════ FIX: WHITISH-GREY DESKTOP MONITOR ═══════ */
-/* Revert section background to white */
-#owner {
-    background: #ffffff !important; 
-}
+
 
 /* Make the Desktop Frame Whitish-Grey (Silver Aluminum Look) */
 .monitor-bezel {
@@ -3527,8 +3527,8 @@ footer {
 
 /* Desktop */
 .device-desktop .device-bezel {
-    background: linear-gradient(145deg, #f0f0f0, #e2e8f0) !important;
-    border: 2px solid #cbd5e1 !important;
+    background: #f0f2f5 !important;
+    border: 1px solid #d1d5db !important;
     box-shadow: 0 35px 60px -15px rgba(0,0,0,0.15), 0 20px 40px -10px rgba(0,0,0,0.1), inset 0 1px 2px rgba(255,255,255,0.9) !important;
 }
 /* Camera dot */
@@ -3553,8 +3553,8 @@ footer {
 
 /* Tablet */
 .device-tablet .device-bezel {
-    background: linear-gradient(145deg, #f0f0f0, #e2e8f0) !important;
-    border: 2px solid #cbd5e1 !important;
+    background: #f0f2f5 !important;
+    border: 1px solid #d1d5db !important;
     box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15), inset 0 1px 2px rgba(255,255,255,0.9) !important;
 }
 .device-tablet .device-bezel::after {
@@ -3843,22 +3843,22 @@ footer {
 .device-desktop .device-bezel,
 .device-tablet .device-bezel,
 .device-phone .device-bezel {
-    background: linear-gradient(145deg, #ffffff, #e5e5ea) !important;
-    border-color: #c7c7cc !important;
+    background: linear-gradient(145deg, #e4e5e7, #d1d5db) !important; /* Authentic Mac Silver */
+    border-color: #a1a1aa !important;
 }
 
 /* Products Section Devices */
 .pnl-desktop .pnl-bezel,
 .pnl-tablet .pnl-bezel,
 .pnl-phone .pnl-bezel {
-    background: linear-gradient(145deg, #ffffff, #e5e5ea) !important;
-    border-color: #c7c7cc !important;
+    background: linear-gradient(145deg, #e4e5e7, #d1d5db) !important;
+    border-color: #a1a1aa !important;
 }
 
 /* Desktop Stands */
 .device-stand,
 .pnl-stand {
-    border-bottom-color: #c7c7cc !important;
+    border-bottom-color: #a1a1aa !important;
 }
 
 /* Device Accents (Camera, Notch, Home Buttons) */
@@ -3873,29 +3873,49 @@ footer {
 }
 
 /* ═══════════════════════════════════════════════
-   PURE MAC SILVER - OWNER DASHBOARD MONITOR
-   ═══════════════════════════════════════════════ */
-
-/* Update the Owner Dashboard monitor to the exact same pure silver */
+/* Update the Owner Dashboard monitor to a MacBook 15-inch (Space Black) */
 .monitor-bezel {
-    background: linear-gradient(145deg, #ffffff, #e5e5ea) !important;
-    border: 1px solid #c7c7cc !important;
-    box-shadow: inset 0 2px 4px rgba(255,255,255,0.9), 0 25px 50px -12px rgba(0,0,0,0.12) !important;
+    background: linear-gradient(160deg, #3a3a3c 0%, #1c1c1e 100%) !important; /* Authentic Space Black */
+    border: 1px solid #48484a !important; /* Lighter edge for metallic highlight */
+    border-radius: 20px 20px 0 0 !important;
+    padding: 14px 14px 18px 14px !important; 
+    box-shadow: inset 0 1px 1px rgba(255,255,255,0.15), 0 15px 35px -10px rgba(0,0,0,0.5) !important;
 }
 
-/* Remove bluish tint from the screen's inner border */
 .monitor-screen {
-    border: 2px solid #c7c7cc !important; 
+    border: 4px solid #000000 !important; 
+    border-radius: 8px !important;
 }
 
-/* Make the stand and base match the pure silver */
+/* Hide the iMac stand */
 .monitor-stand {
-    background: linear-gradient(180deg, #e5e5ea, #d1d1d6) !important;
-    border-left: 1px solid #c7c7cc !important;
-    border-right: 1px solid #c7c7cc !important;
+    display: none !important;
 }
+
+/* Turn the iMac base into a MacBook lower chassis (Space Black) */
 .monitor-base {
-    background: linear-gradient(180deg, #d1d1d6, #aeaeb2) !important;
+    width: 110% !important; 
+    margin-left: -5% !important;
+    height: 18px !important;
+    background: linear-gradient(180deg, #3a3a3c 0%, #1c1c1e 100%) !important;
+    border-radius: 0 0 16px 16px !important;
+    box-shadow: inset 0 1px 2px rgba(255,255,255,0.1), 0 25px 50px -12px rgba(0,0,0,0.6) !important;
+    position: relative !important;
+    z-index: 3 !important;
+}
+
+/* MacBook thumb notch */
+.monitor-base::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 100px !important;
+    height: 8px !important;
+    background: #000000 !important;
+    border-radius: 0 0 8px 8px !important;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.8) !important;
 }
 
 /* Webcam dot */
@@ -4519,4 +4539,433 @@ footer {
         grid-template-columns: 1fr !important;
         gap: 10px !important;
     }
+}
+
+/* ═══════════════════════════════════════════════
+   PRO OFFLINE ARCHITECTURE DIAGRAM (Linear/Vercel style)
+   ═══════════════════════════════════════════════ */
+.pro-network-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 40px auto 0 auto;
+    font-family: var(--font);
+}
+
+.pro-node {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    padding: 10px 16px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    z-index: 10;
+}
+.pro-icon { width: 18px; height: 18px; color: #666; }
+.pro-label { font-size: 0.85rem; font-weight: 500; color: #111; letter-spacing: -0.2px; }
+
+.pro-connection {
+    height: 60px;
+    position: relative;
+    width: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pro-line {
+    position: absolute;
+    top: 0; bottom: 0; width: 1px;
+    background: repeating-linear-gradient(180deg, #d4d4d4 0px, #d4d4d4 4px, transparent 4px, transparent 8px);
+    animation: lineScroll 20s linear infinite;
+}
+@keyframes lineScroll { to { background-position: 0 400px; } }
+
+.pro-line.error { background: #ff453a; animation: none; }
+
+.pro-status-badge {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 20px;
+    padding: 4px 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #666;
+    z-index: 5;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+.status-dot { width: 6px; height: 6px; border-radius: 50%; background: #32d74b; }
+.pro-status-badge.offline .status-dot { background: #ff453a; }
+
+.pro-local-zone {
+    width: 100%;
+    background: #f9f9f9;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,1);
+}
+
+.zone-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+.zone-title { font-size: 0.8rem; font-weight: 600; color: #111; text-transform: uppercase; letter-spacing: 0.5px; }
+.zone-badge {
+    font-size: 0.7rem; font-weight: 500; color: #32d74b;
+    background: rgba(50, 215, 75, 0.1);
+    padding: 2px 8px; border-radius: 4px;
+}
+.zone-badge.warning { color: #ff9f0a; background: rgba(255, 159, 10, 0.1); }
+
+.pro-devices-grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    padding: 24px 32px;
+}
+
+.pro-device {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    width: 100px;
+}
+.dev-type { font-size: 0.65rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+.dev-icon { width: 24px; height: 24px; color: #111; margin-bottom: 8px; }
+.dev-name { font-size: 0.8rem; font-weight: 500; color: #111; }
+
+.pro-device.main .dev-icon { color: #007aff; }
+
+.queue-indicator {
+    position: absolute;
+    top: -25px;
+    background: #ff9f0a;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: all 0.2s ease;
+}
+.queue-indicator.show { opacity: 1; transform: translateY(0); }
+.queue-indicator.pop { transform: translateY(-3px) scale(1.05); }
+
+.pro-flow { flex-grow: 1; height: 1px; position: relative; margin: 0 16px; }
+.pro-flow-line {
+    position: absolute; top: 0; bottom: 0; left: 0; right: 0;
+    background: repeating-linear-gradient(90deg, #d4d4d4 0px, #d4d4d4 4px, transparent 4px, transparent 8px);
+}
+.pro-flow-line.active {
+    animation: flowScroll 20s linear infinite;
+}
+@keyframes flowScroll { to { background-position: -400px 0; } }
+
+.friendly-log {
+    margin-top: 24px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #475569;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+}
+.friendly-log.error { color: #b91c1c; background: #fef2f2; border-color: #fca5a5; }
+.friendly-log.warning { color: #b45309; background: #fffbeb; border-color: #fcd34d; }
+.friendly-log.success { color: #15803d; background: #f0fdf4; border-color: #86efac; }
+
+/* ═══════════════════════════════════════════════
+   HERO MACBOOK (SILVER)
+   ═══════════════════════════════════════════════ */
+/* Outer aluminum shell */
+.device-macbook .device-bezel {
+    background: #f0f2f5 !important;
+    border: 1px solid #d1d5db !important; 
+    border-radius: 8px 8px 0 0 !important;
+    padding: 6px 6px 10px 6px !important; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
+}
+
+/* Inner screen area */
+.device-macbook .device-screen {
+    border: none !important; 
+    border-radius: 4px !important;
+}
+
+/* Hide the iMac stand */
+.device-macbook .device-stand {
+    display: none !important;
+}
+
+/* Lower chassis (keyboard deck / base) */
+.device-macbook .device-base {
+    width: 106% !important; 
+    margin-left: -3% !important;
+    height: 14px !important;
+    background: linear-gradient(180deg, #e4e5e7 0%, #a1a1aa 100%) !important;
+    border-radius: 2px 2px 12px 12px !important;
+    box-shadow: inset 0 2px 3px rgba(255,255,255,0.8), 0 20px 40px -10px rgba(0,0,0,0.6) !important;
+    position: relative !important;
+    z-index: 3 !important;
+    border-top: 1px solid #f3f4f6 !important;
+}
+
+/* MacBook thumb notch */
+.device-macbook .device-base::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 60px !important;
+    height: 5px !important;
+    background: #9ca3af !important;
+    border-radius: 0 0 6px 6px !important;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2) !important;
+}
+
+/* Webcam dot (in the black bezel) */
+.device-macbook .device-bezel::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 6px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 6px !important;
+    height: 6px !important;
+    background: #333 !important;
+    border-radius: 50% !important;
+}
+/* Position the new MacBook in the Hero Stage */
+.device-macbook {
+    position: absolute !important;
+    bottom: -45px !important;
+    left: 48% !important;
+    transform: translateX(-50%) !important;
+    width: 340px !important;
+    z-index: 4 !important;
+    animation: floatTablet 6.5s ease-in-out infinite 1.5s;
+}
+.device-macbook .device-screen img {
+    width: 100%;
+    display: block;
+}
+@media (max-width: 992px) {
+    .device-macbook {
+        width: 300px !important;
+        bottom: -30px !important;
+    }
+}
+@media (max-width: 768px) {
+    .device-macbook {
+        width: 200px !important;
+        bottom: -20px !important;
+    }
+}
+@media (max-width: 576px) {
+    .device-macbook {
+        width: 140px !important;
+        bottom: -20px !important;
+    }
+}
+.device-tablet { 
+    right: -130px !important; 
+    bottom: 20px !important;
+}
+.device-phone {
+    left: -40px !important;
+}
+@media (max-width: 992px) {
+    .device-tablet { right: -80px !important; }
+}
+@media (max-width: 576px) {
+    .device-tablet { right: -50px !important; bottom: 30px !important; }
+    .device-phone { left: -10px !important; }
+}
+/* ═══════════════════════════════════════════════
+   PREMIUM DEVICE HARDWARE UPGRADES
+   ═══════════════════════════════════════════════ */
+
+/* 1. Classic Clean Mobile Style */
+.device-phone .device-bezel {
+    width: 90px !important;
+    padding: 5px !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 14px !important;
+    position: relative !important;
+    background: #f0f2f5 !important;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3) !important;
+}
+.device-phone .device-notch {
+    display: none !important; /* Hide old block notch */
+}
+.device-phone .device-screen {
+    position: relative !important;
+    border-radius: 10px !important;
+    border: none !important;
+    aspect-ratio: 9/19 !important; /* Makes the phone vertically taller */
+}
+/* Tiny classic camera dot instead of huge pill */
+.device-phone .device-screen::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 4px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 6px !important;
+    height: 6px !important;
+    background: #000000 !important;
+    border-radius: 50% !important;
+    z-index: 10 !important;
+}
+/* Home Indicator Bar */
+.device-phone .device-screen::after {
+    display: none !important;
+}
+
+/* 2. iPad Pro Style */
+.device-tablet .device-bezel {
+    position: relative !important;
+    padding: 6px !important;
+    border-radius: 12px !important;
+}
+.device-tablet .device-screen {
+    border-radius: 6px !important;
+}
+/* iPad Front Camera */
+.device-tablet .device-bezel::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 2.5px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 3px !important;
+    height: 3px !important;
+    background: #333 !important;
+    border-radius: 50% !important;
+    z-index: 5 !important;
+}
+
+/* 3. iMac Front Camera */
+.device-desktop .device-bezel {
+    position: relative !important;
+}
+.device-desktop .device-bezel::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 3px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 4px !important;
+    height: 4px !important;
+    background: #333 !important;
+    border-radius: 50% !important;
+    z-index: 5 !important;
+}
+
+/* ═══════════════════════════════════════════════
+   FINAL LAYOUT: CLUSTERED OVERLAP
+   ═══════════════════════════════════════════════ */
+.hero-product-stage {
+    display: block !important;
+    position: relative !important;
+    left: 40px !important; /* Shift entire cluster to the right */
+    min-height: 400px !important;
+    padding-bottom: 20px !important;
+    transform: none !important; /* Make it BIG again */
+}
+
+/* iMac (Center, Back) */
+.device-desktop {
+    position: relative !important;
+    z-index: 1 !important;
+    margin: 0 auto !important; /* Centered */
+}
+
+/* MacBook (Bottom Left, Overlapping iMac) */
+.device-macbook {
+    position: absolute !important;
+    bottom: -30px !important;
+    left: -100px !important; /* Pushed to bottom left */
+    width: 340px !important;
+    z-index: 3 !important;
+    transform: none !important;
+    margin: 0 !important;
+}
+
+/* iPad (Bottom Right, Overlapping iMac) */
+.device-tablet {
+    position: absolute !important;
+    bottom: 0px !important;
+    right: -40px !important; /* Shifted left (closer to center) */
+    width: 250px !important;
+    z-index: 2 !important;
+    transform: none !important;
+    margin: 0 !important;
+}
+
+/* Phone (Floating UP, Side-by-side with iMac on left) */
+.device-phone {
+    position: absolute !important;
+    bottom: 220px !important; /* Move it higher UP next to desktop screen */
+    left: -60px !important; /* Float it slightly more to the right, overlapping iMac */
+    z-index: 6 !important; /* Above MacBook */
+    margin: 0 !important;
+}
+
+/* Responsive Tweaks */
+.hero-text {
+    position: relative !important;
+    left: -40px !important;
+}
+.hero-stats {
+    gap: 20px !important; /* Pulls the 3rd stat inwards (to the left) */
+}
+
+/* Increase Navbar Logo Size */
+.nav-logo {
+    font-size: 1.75rem !important;
+}
+.nav-logo img {
+    width: 48px !important;
+    height: 48px !important;
+}
+
+@media (max-width: 992px) {
+    .hero-text { left: 0 !important; }
+    .device-macbook { left: -20px !important; width: 280px !important; }
+    .device-tablet { right: -10px !important; width: 200px !important; }
+    .device-phone { left: -30px !important; }
+}
+@media (max-width: 768px) {
+    .device-macbook { left: 0px !important; width: 240px !important; bottom: -10px !important; }
+    .device-tablet { right: 0px !important; width: 160px !important; bottom: 10px !important; }
+    .device-phone { left: -10px !important; }
+}
+@media (max-width: 576px) {
+    .device-macbook { margin-right: -20px !important; width: 160px !important; bottom: 10px !important; }
+    .device-tablet { margin-left: -20px !important; width: 140px !important; bottom: 30px !important; }
+    .device-phone { bottom: -5px !important; }
+}
+.device-phone .device-bezel::before,
+.device-phone .device-bezel::after {
+    display: none !important;
 }

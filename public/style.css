@@ -4966,27 +4966,39 @@ footer {
 
 @media (max-width: 992px) {
     .hero-text { left: 0 !important; }
-    .hero-product-stage { left: 0 !important; min-height: 320px !important; }
-    .device-desktop .device-bezel { width: 360px !important; }
-    .device-macbook { left: -50px !important; width: 260px !important; bottom: -20px !important; }
-    .device-tablet { right: -20px !important; width: 200px !important; }
-    .device-phone { left: -30px !important; width: 70px !important; bottom: 180px !important; }
+    .hero-product-stage { 
+        left: 0 !important; 
+        transform: scale(0.8) !important; 
+        transform-origin: top center !important; 
+        margin-bottom: -100px !important;
+    }
+    /* Lock devices to desktop proportions to preserve the exact cluster layout */
+    .device-desktop .device-bezel { width: 460px !important; }
+    .device-macbook { width: 340px !important; left: -100px !important; bottom: -30px !important; }
+    .device-tablet { width: 220px !important; right: -40px !important; bottom: 0 !important; }
+    .device-phone { width: 100px !important; left: -60px !important; bottom: 220px !important; }
 }
 
 @media (max-width: 768px) {
-    .hero-product-stage { min-height: 250px !important; transform: scale(0.9) !important; transform-origin: top center !important; }
-    .device-desktop .device-bezel { width: 280px !important; }
-    .device-macbook { left: -30px !important; width: 200px !important; bottom: -10px !important; }
-    .device-tablet { right: -10px !important; width: 150px !important; bottom: 0 !important; }
-    .device-phone { left: -20px !important; width: 60px !important; bottom: 140px !important; }
+    .hero-product-stage { 
+        transform: scale(0.65) !important; 
+        margin-bottom: -180px !important; 
+    }
+    .device-desktop .device-bezel { width: 460px !important; }
+    .device-macbook { width: 340px !important; left: -100px !important; bottom: -30px !important; }
+    .device-tablet { width: 220px !important; right: -40px !important; bottom: 0 !important; }
+    .device-phone { width: 100px !important; left: -60px !important; bottom: 220px !important; }
 }
 
 @media (max-width: 576px) {
-    .hero-product-stage { min-height: 200px !important; transform: scale(0.85) !important; }
-    .device-desktop .device-bezel { width: 240px !important; }
-    .device-macbook { left: -20px !important; width: 170px !important; bottom: -10px !important; }
-    .device-tablet { right: 0px !important; width: 130px !important; bottom: 10px !important; }
-    .device-phone { left: -15px !important; width: 50px !important; bottom: 120px !important; }
+    .hero-product-stage { 
+        transform: scale(0.48) !important; 
+        margin-bottom: -250px !important; 
+    }
+    .device-desktop .device-bezel { width: 460px !important; }
+    .device-macbook { width: 340px !important; left: -100px !important; bottom: -30px !important; }
+    .device-tablet { width: 220px !important; right: -40px !important; bottom: 0 !important; }
+    .device-phone { width: 100px !important; left: -60px !important; bottom: 220px !important; }
 }
 .device-phone .device-bezel::before,
 .device-phone .device-bezel::after {

@@ -2822,7 +2822,7 @@ footer {
     border-radius: 32px;
     padding: 14px 10px;
     box-shadow: 0 25px 60px rgba(0,0,0,0.12), inset 0 1px 2px rgba(255,255,255,0.8);
-    width: 280px;
+    width: 220px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2885,9 +2885,7 @@ footer {
     width: 100% !important;
 }
 
-@media (max-width: 992px) {
-    .pnl-phone .pnl-bezel { width: 220px; }
-}
+
 
 /* ═══════════════════════════════════════════════
    FIX: DEVICE FRAME SIZING AND IMAGE FITTING
@@ -3763,7 +3761,7 @@ footer {
     /* Scale Phone (Captain App) */
     .pnl-phone .pnl-bezel {
         width: 100% !important;
-        max-width: 240px !important;
+        max-width: 180px !important;
         padding: 12px 8px !important;
     }
     

@@ -4325,3 +4325,21 @@ footer {
         display: none !important;
     }
 }
+
+/* Compact the steps for the POS panel so all 6 fit on a laptop screen */
+@media (min-width: 993px) {
+    .workflow-container .workflow-steps {
+        gap: 6px !important;
+    }
+    .workflow-container .w-step {
+        padding: 10px 14px !important;
+    }
+    .workflow-container .w-step h4 {
+        margin: 0 0 2px 0 !important;
+        font-size: 0.95rem !important;
+    }
+    .workflow-container .w-step p {
+        font-size: 0.82rem !important;
+        line-height: 1.3 !important;
+    }
+}

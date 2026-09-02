@@ -4964,48 +4964,131 @@ footer {
     height: 48px !important;
 }
 
-@media (max-width: 992px) {
+/* ═══════════════════════════════════════════════════════════════
+   MASTER MOBILE RESPONSIVE — FINAL AUTHORITY
+   This block sits at the very end so it wins all CSS specificity fights.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ---------- TABLET (≤1024px) ---------- */
+@media (max-width: 1024px) {
+    /* Hero: stack text above devices */
+    .hero-inner {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+    }
     .hero-text { left: 0 !important; }
-    .hero-product-stage { 
+    .hero-desc { margin: 0 auto 24px !important; }
+    .hero-ctas { justify-content: center !important; }
+    .hero-stats { justify-content: center !important; }
+
+    /* FORCE devices visible — override original display:none */
+    .hero-product-stage {
         display: block !important;
+        position: relative !important;
+        left: 0 !important;
         min-height: 400px !important;
-        left: 0 !important; 
-        transform: scale(0.9) !important; 
-        transform-origin: top center !important; 
-        margin-bottom: -50px !important;
+        transform: scale(0.85) !important;
+        transform-origin: top center !important;
+        margin-bottom: -80px !important;
     }
-    /* Lock devices to desktop proportions to preserve the exact cluster layout */
+    /* Lock device sizes to desktop values */
+    .device-desktop { position: relative !important; z-index: 1 !important; margin: 0 auto !important; }
     .device-desktop .device-bezel { width: 460px !important; }
-    .device-macbook { width: 340px !important; left: -100px !important; bottom: -30px !important; }
-    .device-tablet { width: 220px !important; right: -40px !important; bottom: 0 !important; }
-    .device-phone { width: 100px !important; left: -60px !important; bottom: 220px !important; }
+    .device-macbook { position: absolute !important; width: 340px !important; left: -100px !important; bottom: -30px !important; z-index: 2 !important; }
+    .device-tablet { position: absolute !important; width: 220px !important; right: -40px !important; bottom: 0 !important; z-index: 3 !important; }
+    .device-phone { position: absolute !important; width: 100px !important; left: -60px !important; bottom: 220px !important; z-index: 6 !important; }
+
+    /* Products section */
+    .product-content { grid-template-columns: 1fr !important; }
+    .product-visual { order: -1 !important; }
+
+    /* Register section */
+    .register-layout { grid-template-columns: 1fr !important; }
+    .register-info { text-align: center !important; }
 }
 
+/* ---------- PHONE (≤768px) ---------- */
 @media (max-width: 768px) {
-    .hero-product-stage { 
+    .section { padding: 48px 0 !important; }
+    .section-title { font-size: 1.8rem !important; }
+    .nav-links, .nav-actions { display: none !important; }
+    .menu-toggle { display: flex !important; }
+
+    /* Hero devices — scale down more */
+    .hero-product-stage {
         display: block !important;
+        position: relative !important;
         min-height: 400px !important;
-        transform: scale(0.75) !important; 
-        margin-bottom: -120px !important; 
+        transform: scale(0.65) !important;
+        transform-origin: top center !important;
+        margin-bottom: -160px !important;
     }
     .device-desktop .device-bezel { width: 460px !important; }
     .device-macbook { width: 340px !important; left: -100px !important; bottom: -30px !important; }
     .device-tablet { width: 220px !important; right: -40px !important; bottom: 0 !important; }
     .device-phone { width: 100px !important; left: -60px !important; bottom: 220px !important; }
+
+    /* Pricing */
+    .pricing-cards { grid-template-columns: 1fr !important; max-width: 400px !important; margin: 0 auto !important; }
+    .price-card.featured { transform: none !important; }
+
+    /* Features grid */
+    .features-grid { grid-template-columns: 1fr !important; }
+
+    /* Workflow steps */
+    .workflow-track .workflow-step,
+    .workflow-track .workflow-step:nth-child(even) { flex-direction: column !important; text-align: center !important; }
+    .workflow-line { display: none !important; }
+
+    /* Offline section */
+    .offline-demo { flex-direction: column !important; }
+    .offline-connector { width: 2px !important; height: 24px !important; }
+
+    /* Sync */
+    .sync-demo { grid-template-columns: 1fr !important; max-width: 320px !important; }
+    .sync-arrow { transform: rotate(90deg) !important; }
+
+    /* Footer */
+    .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 30px !important; }
+
+    /* Forms */
+    .form-row { grid-template-columns: 1fr !important; }
+
+    /* Owner */
+    .hq-content { grid-template-columns: 1fr !important; }
+    .hq-body { grid-template-columns: 1fr !important; }
+
+    /* POS & KDS */
+    .pos-screen { grid-template-columns: 1fr !important; }
+    .kds-columns { grid-template-columns: 1fr !important; }
 }
 
-@media (max-width: 576px) {
-    .hero-product-stage { 
+/* ---------- SMALL PHONE (≤480px) ---------- */
+@media (max-width: 480px) {
+    .container { padding: 0 16px !important; }
+
+    /* Hero devices — even smaller */
+    .hero-product-stage {
         display: block !important;
+        position: relative !important;
         min-height: 400px !important;
-        transform: scale(0.6) !important; 
-        margin-bottom: -180px !important; 
+        transform: scale(0.5) !important;
+        transform-origin: top center !important;
+        margin-bottom: -220px !important;
     }
     .device-desktop .device-bezel { width: 460px !important; }
     .device-macbook { width: 340px !important; left: -100px !important; bottom: -30px !important; }
     .device-tablet { width: 220px !important; right: -40px !important; bottom: 0 !important; }
     .device-phone { width: 100px !important; left: -60px !important; bottom: 220px !important; }
+
+    /* Stats row */
+    .hero-stats { flex-direction: row !important; flex-wrap: wrap !important; justify-content: center !important; gap: 16px !important; }
+
+    /* Product tabs stack */
+    .product-tabs { flex-direction: column !important; align-items: stretch !important; }
 }
+
+/* Phone bezel pseudo-element cleanup (all sizes) */
 .device-phone .device-bezel::before,
 .device-phone .device-bezel::after {
     display: none !important;

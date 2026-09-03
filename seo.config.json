@@ -1,20 +1,54 @@
 {
     "canonical_domain": "https://restova.com",
-    "public_routes": [
+    "route_groups": [
         {
-            "path": "/",
-            "lang": "en",
-            "priority": 1.0,
-            "changefreq": "weekly"
-        },
-        {
-            "path": "/ar/",
-            "lang": "ar",
+            "id": "home",
+            "en": "/",
+            "ar": "/ar/",
+            "x-default": "en",
             "priority": 1.0,
             "changefreq": "weekly"
         }
     ],
     "disallowed_paths": [
         "/mock-*.html"
+    ],
+    "future_routes_for_part_3": [
+        {
+            "id": "pos",
+            "en": "/pos/",
+            "ar": "/ar/pos/",
+            "x-default": "en"
+        },
+        {
+            "id": "captain",
+            "en": "/captain/",
+            "ar": "/ar/captain/",
+            "x-default": "en"
+        },
+        {
+            "id": "kitchen-display",
+            "en": "/kitchen-display/",
+            "ar": "/ar/kitchen-display/",
+            "x-default": "en"
+        },
+        {
+            "id": "restaurant-management",
+            "en": "/restaurant-management/",
+            "ar": "/ar/restaurant-management/",
+            "x-default": "en"
+        },
+        {
+            "id": "offline-pos",
+            "en": "/offline-pos/",
+            "ar": "/ar/offline-pos/",
+            "x-default": "en"
+        },
+        {
+            "id": "owner-dashboard",
+            "en": "/owner-dashboard/",
+            "ar": "/ar/owner-dashboard/",
+            "x-default": "en"
+        }
     ]
 }

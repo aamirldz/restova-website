@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://restova.com/</loc>
     <changefreq>weekly</changefreq>
@@ -12,92 +12,162 @@
   </url>
   <url>
     <loc>https://restova.com/pos/</loc>
+    <image:image>
+      <image:loc>https://restova.com/images/restova-pos-billing.png</image:loc>
+    </image:image>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://restova.com/ar/pos/</loc>
+    <image:image>
+      <image:loc>https://restova.com/images/restova-pos-billing.png</image:loc>
+    </image:image>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://restova.com/captain/</loc>
+    <image:image>
+      <image:loc>https://restova.com/images/restova-captain-app-ordering.png</image:loc>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://restova.com/ar/captain/</loc>
+    <image:image>
+      <image:loc>https://restova.com/images/restova-captain-app-ordering.png</image:loc>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://restova.com/kitchen-display/</loc>
+    <image:image>
+      <image:loc>https://restova.com/images/restova-kitchen-display-system.png</image:loc>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://restova.com/ar/kitchen-display/</loc>
+    <image:image>
+      <image:loc>https://restova.com/images/restova-kitchen-display-system.png</image:loc>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://restova.com/restaurant-management/</loc>
+    <image:image>
+      <image:loc>https://restova.com/images/restova-restaurant-menu-management.png</image:loc>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://restova.com/ar/restaurant-management/</loc>
+    <image:image>
+      <image:loc>https://restova.com/images/restova-restaurant-menu-management.png</image:loc>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://restova.com/restaurant-billing/</loc>
+    <image:image>
+      <image:loc>https://restova.com/images/restova-pos-settlement.png</image:loc>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://restova.com/ar/restaurant-billing/</loc>
+    <image:image>
+      <image:loc>https://restova.com/images/restova-pos-settlement.png</image:loc>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://restova.com/table-management/</loc>
+    <image:image>
+      <image:loc>https://restova.com/images/restova-pos-table-management.png</image:loc>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://restova.com/ar/table-management/</loc>
+    <image:image>
+      <image:loc>https://restova.com/images/restova-pos-table-management.png</image:loc>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://restova.com/offline-pos/</loc>
+    <image:image>
+      <image:loc>https://restova.com/images/restova-offline-pos-sync.png</image:loc>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://restova.com/ar/offline-pos/</loc>
+    <image:image>
+      <image:loc>https://restova.com/images/restova-offline-pos-sync.png</image:loc>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://restova.com/real-time-sync/</loc>
+    <image:image>
+      <image:loc>https://restova.com/images/restova-real-time-sync.png</image:loc>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://restova.com/ar/real-time-sync/</loc>
+    <image:image>
+      <image:loc>https://restova.com/images/restova-real-time-sync.png</image:loc>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://restova.com/owner-dashboard/</loc>
+    <image:image>
+      <image:loc>https://restova.com/images/restova-restaurant-management-dashboard.png</image:loc>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://restova.com/ar/owner-dashboard/</loc>
+    <image:image>
+      <image:loc>https://restova.com/images/restova-restaurant-management-dashboard.png</image:loc>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://restova.com/about/aamir-akwar-ali/</loc>
+    <image:image>
+      <image:loc>https://restova.com/images/aamir-akwar-ali-restova-founder.jpeg</image:loc>
+    </image:image>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://restova.com/ar/about/aamir-akwar-ali/</loc>
+    <image:image>
+      <image:loc>https://restova.com/images/aamir-akwar-ali-restova-founder.jpeg</image:loc>
+    </image:image>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

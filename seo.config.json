@@ -80,6 +80,14 @@
             "x-default": "en",
             "priority": 0.8,
             "changefreq": "monthly"
+        },
+        {
+            "id": "about-founder",
+            "en": "/about/aamir-akwar-ali/",
+            "ar": "/ar/about/aamir-akwar-ali/",
+            "x-default": "en",
+            "priority": 0.6,
+            "changefreq": "monthly"
         }
     ],
     "disallowed_paths": [

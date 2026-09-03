@@ -324,7 +324,7 @@ button,input,select,textarea{font-family:inherit;font-size:inherit}
 .price-card{background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);padding:36px 28px;position:relative;transition:all .3s var(--ease)}
 .price-card:hover{box-shadow:var(--sh-md)}
 .price-card.featured{border-color:var(--primary);box-shadow:0 8px 32px rgba(230,57,70,.1);transform:scale(1.02)}
-.price-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--primary);color:#fff;font-size:.7rem;font-weight:700;padding:4px 14px;border-radius:var(--r-xl);white-space:nowrap}
+.price-badge{position:absolute;top:-12px;left:0;right:0;margin:0 auto;width:max-content;background:var(--primary);color:#fff;font-size:.7rem;font-weight:700;padding:4px 14px;border-radius:var(--r-xl);white-space:nowrap}
 .price-plan{font-size:1.1rem;font-weight:700;margin-bottom:8px}
 .price-amount{font-size:2.5rem;font-weight:900;letter-spacing:-.02em}
 .price-period{font-size:.85rem;color:var(--text-m);margin-bottom:8px}
@@ -5339,3 +5339,28 @@ html[dir="rtl"] .workflow-track .workflow-step.active .step-icon {
     }
 }
 
+
+/* Fix 5: Pricing Checkmarks & Footer Alignment in RTL */
+html[dir="rtl"] .price-features li {
+    padding-left: 0 !important;
+    padding-right: 22px !important;
+}
+html[dir="rtl"] .price-features li::before {
+    left: auto !important;
+    right: 0 !important;
+}
+html[dir="rtl"] .footer-col {
+    text-align: right !important;
+}
+html[dir="rtl"] .footer-logo {
+    justify-content: flex-start !important;
+}
+
+/* FAQ Alignment in RTL */
+html[dir="rtl"] .faq-question {
+    text-align: right !important;
+}
+html[dir="rtl"] .faq-icon {
+    margin-right: 16px !important;
+    margin-left: 0 !important;
+}

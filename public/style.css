@@ -4976,8 +4976,10 @@ footer {
         grid-template-columns: 1fr !important;
         text-align: center !important;
     }
-    .hero-text { left: 0 !important; }
-    .hero-desc { margin: 0 auto 24px !important; }
+    .hero-text { left: 0 !important; text-align: center !important; }
+    .hero-text h1 { text-align: center !important; }
+    .hero-desc { margin: 0 auto 24px !important; text-align: center !important; }
+    .hero-badge { margin: 0 auto 16px !important; }
     .hero-ctas { justify-content: center !important; }
     .hero-stats { justify-content: center !important; }
 

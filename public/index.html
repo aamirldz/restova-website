@@ -15,9 +15,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css?v=18">
+    <link rel="stylesheet" href="/style.css?v=20">
+    <script>
+        // Professional language auto-detection & routing
+        (function() {
+            try {
+                if (localStorage.getItem('restova_lang') === 'en') return;
+                if (localStorage.getItem('restova_lang') === 'ar') {
+                    window.location.replace('/ar/');
+                    return;
+                }
+                const userLang = navigator.language || navigator.userLanguage;
+                if (userLang.toLowerCase().startsWith('ar')) {
+                    window.location.replace('/ar/');
+                }
+            } catch(e) {}
+        })();
+    </script>
 </head>
 <body>
+
 
 <!-- ═══════════════════════════════════════ -->
 <!-- NAVIGATION                             -->
@@ -35,7 +52,7 @@
             <a href="#faq">FAQ</a>
         </div>
         <div class="nav-actions">
-            
+            <a href="/ar/" class="lang-switch" onclick="localStorage.setItem('restova_lang', 'ar')">العربية</a>
             <a href="#register" class="btn-primary btn-sm">Register Restaurant</a>
         </div>
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
@@ -51,6 +68,7 @@
         <a href="#features">Features</a>
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
+        <a href="/ar/" class="lang-switch-mobile" onclick="localStorage.setItem('restova_lang', 'ar')">🌍 العربية</a>
         <hr>
         
         <a href="#register" class="btn-primary">Register Restaurant</a>

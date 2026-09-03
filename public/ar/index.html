@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ريستوفا — نظام نقاط البيع للمطاعم، تطبيق الكابتن ونظام عرض المطبخ</title>
+    <meta name="description" content="ريستوفا هو نظام تشغيل متكامل للمطاعم. فواتير نقاط البيع، تطبيق طلبات الكابتن، وعرض المطبخ — جميعها متصلة في الوقت الفعلي. يعمل بدون إنترنت. مصمم للمطاعم المزدحمة في الهند.">
+    <meta property="og:title" content="ريستوفا — نظام مطعم واحد">
+    <meta property="og:description" content="نقاط البيع، تطبيق الكابتن، ونظام عرض المطبخ متصلة في الوقت الفعلي. يعمل بدون إنترنت. مصمم للمطاعم المزدحمة.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="canonical" href="https://restova.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Include Arabic font if desired, e.g., Tajawal or Cairo, but keeping Inter as original unless specified -->
+    <link rel="stylesheet" href="/style.css?v=20">
+    <script>
+        // Professional language auto-detection & routing
+        (function() {
+            try {
+                if (localStorage.getItem('restova_lang') === 'en') {
+                    window.location.replace('/');
+                    return;
+                }
+            } catch(e) {}
+        })();
+    </script>
+</head>
+<body>
+
+
+<!-- ═══════════════════════════════════════ -->
+<!-- NAVIGATION                             -->
+<!-- ═══════════════════════════════════════ -->
+<nav id="navbar">
+    <div class="nav-inner container">
+        <a href="#" class="nav-logo">
+            <img src="/logo.png" alt="Restova" width="36" height="36">
+            <span>ريستوفا</span>
+        </a>
+        <div class="nav-links" id="navLinks">
+            <a href="#products">المنتجات</a>
+            <a href="#features">الميزات</a>
+            <a href="#pricing">الأسعار</a>
+            <a href="#faq">الأسئلة الشائعة</a>
+        </div>
+        <div class="nav-actions">
+            <a href="/" class="lang-switch" onclick="localStorage.setItem('restova_lang', 'en')">English</a>
+            <a href="#register" class="btn-primary btn-sm">تسجيل مطعم</a>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="تبديل القائمة">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+        <a href="#products">المنتجات</a>
+        <a href="#features">الميزات</a>
+        <a href="#pricing">الأسعار</a>
+        <a href="#faq">الأسئلة الشائعة</a>
+        <a href="/" class="lang-switch-mobile" onclick="localStorage.setItem('restova_lang', 'en')">🌍 English</a>
+        <hr>
+        
+        <a href="#register" class="btn-primary">تسجيل مطعم</a>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- HERO                                    -->
+<!-- ═══════════════════════════════════════ -->
+<section id="hero">
+    <div class="hero-inner container">
+        <div class="hero-text">
+            <div class="hero-badge">نظام تشغيل المطاعم</div>
+            <h1>نظام واحد لمطعمك<br>بأكمله.</h1>
+            <p class="hero-desc">فواتير نقاط البيع، طلبات الكابتن، وعرض المطبخ — متصلة في الوقت الفعلي. يعمل حتى عند انقطاع الإنترنت. مصمم للمطاعم المزدحمة في الهند.</p>
+        <div class="hero-ctas">
+            <a href="#register" class="btn-primary btn-lg">سجل مطعمك</a>
+            <!-- <a href="#products" class="btn-secondary btn-lg">شاهد كيف يعمل</a> -->
+        </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <strong>100%</strong>
+                    <span>يعمل بدون إنترنت</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>&lt;50ms</strong>
+                    <span>مزامنة في الوقت الفعلي</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>3-في-1</strong>
+                    <span>نظام متصل</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-product-stage">
+            <!-- Desktop frame — POS Terminal -->
+            <div class="device-desktop">
+                <div class="device-bezel">
+                    <div class="device-screen">
+                        <img src="../images/wf-1-table.png" alt="Restova POS Terminal">
+                    </div>
+                </div>
+                <div class="device-stand"></div>
+            </div>
+            
+            <!-- Owner MacBook -->
+            <div class="device-macbook">
+                <div class="device-bezel">
+                    <div class="device-screen">
+                        <img src="../images/owner-dashboard.png" alt="Restova Dashboard">
+                    </div>
+                </div>
+                <div class="device-base"></div>
+            </div>
+            <!-- Tablet frame — KDS -->
+            <div class="device-tablet">
+                <div class="device-bezel">
+                    <div class="device-screen">
+                        <img src="../images/kds-1.png" alt="Restova KDS">
+                    </div>
+                </div>
+            </div>
+            <!-- Phone frame — Captain App -->
+            <div class="device-phone">
+                <div class="device-bezel">
+                    <div class="device-notch"></div>
+                    <div class="device-screen">
+                        <img src="../images/cpt-2.png" alt="Restova Captain App">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-gradient"></div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- PRODUCT ECOSYSTEM                       -->
+<!-- ═══════════════════════════════════════ -->
+<section id="products" class="section section-alt">
+    <div class="container">
+        <div class="section-header reveal" style="margin-bottom: 20px;">
+            <h2 class="section-title">ثلاثة منتجات.<br>نظام واحد متصل.</h2>
+            <p class="section-subtitle hide-on-mobile">يتعامل كل منتج مع جزء حيوي من عمليات المطعم. معًا، يقضون على التذاكر الورقية، والصراخ عبر الغرف، والطلبات المفقودة.</p>
+        </div>
+        <div class="product-tabs reveal">
+            <button class="product-tab active" data-tab="pos">
+                <span class="tab-icon">🖥</span> نقاط بيع ريستوفا
+            </button>
+            <button class="product-tab" data-tab="captain">
+                <span class="tab-icon">📱</span> تطبيق الكابتن
+            </button>
+            <button class="product-tab" data-tab="kds">
+                <span class="tab-icon">🍳</span> عرض المطبخ
+            </button>
+        </div>
+
+        <!-- POS Panel -->
+        <div class="product-panel active" data-panel="pos">
+            <div class="product-content reveal" style="display:block;">
+                <div class="workflow-container">
+                    <div class="workflow-steps">
+                        <div class="w-step active" data-img="wf-1" onclick="switchWorkflow(this)">
+                            <h4>1. إدارة الطاولات</h4>
+                            <p>اختر طاولة متاحة وراقب حالة الصالة مع مؤقتات حية ومبالغ الفواتير.</p>
+                            <div class="w-step-progress"><div class="w-step-progress-bar"></div></div>
+                        </div>
+                        <div class="w-step" data-img="wf-2" onclick="switchWorkflow(this)">
+                            <h4>2. الطلب والفواتير</h4>
+                            <p>أدخل العناصر فورًا. يتم حساب الضرائب والمجاميع تلقائيًا وبلا أخطاء.</p>
+                            <div class="w-step-progress"><div class="w-step-progress-bar"></div></div>
+                        </div>
+                        <div class="w-step" data-img="wf-3" onclick="switchWorkflow(this)">
+                            <h4>3. طلب المطبخ (KOT)</h4>
+                            <p>أرسل التذاكر مباشرة إلى المطبخ بنقرة واحدة.</p>
+                            <div class="w-step-progress"><div class="w-step-progress-bar"></div></div>
+                        </div>
+                        <div class="w-step" data-img="wf-4" onclick="switchWorkflow(this)">
+                            <h4>4. مزامنة KDS</h4>
+                            <p>شاهد الطلبات تظهر فورًا على نظام عرض المطبخ.</p>
+                            <div class="w-step-progress"><div class="w-step-progress-bar"></div></div>
+                        </div>
+                        <div class="w-step" data-img="wf-5" onclick="switchWorkflow(this)">
+                            <h4>5. تسوية الفاتورة</h4>
+                            <p>قسّم الفواتير، طبق الخصومات، واقبل أي طريقة دفع.</p>
+                            <div class="w-step-progress"><div class="w-step-progress-bar"></div></div>
+                        </div>
+                        <div class="w-step" data-img="wf-6" onclick="switchWorkflow(this)">
+                            <h4>6. سجل المبيعات</h4>
+                            <p>تتبع جميع الطلبات المكتملة والإيرادات اليومية بسلاسة.</p>
+                            <div class="w-step-progress"><div class="w-step-progress-bar"></div></div>
+                        </div>
+                    </div>
+                    <div class="pnl-device pnl-desktop">
+                        <div class="pnl-bezel">
+                            <div class="pnl-bezel-dot"></div>
+                            <div class="workflow-visual">
+                                <img src="../images/wf-1-table.png" id="wf-1" class="active contain-img" alt="POS 1">
+                                <img src="../images/wf-2-billing.png" id="wf-2" class="contain-img" alt="POS 2">
+                                <img src="../images/wf-3-kot.png" id="wf-3" class="contain-img" alt="POS 3">
+                                <img src="../images/wf-4-kds.png" id="wf-4" class="contain-img" alt="POS 4">
+                                <img src="../images/wf-5-settle.png" id="wf-5" class="contain-img" alt="POS 5">
+                                <img src="../images/wf-6-sales.png" id="wf-6" class="contain-img" alt="POS 6">
+                            </div>
+                        </div>
+                        <div class="pnl-stand"></div>
+                        <div class="pnl-base"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Captain Panel -->
+        <div class="product-panel" data-panel="captain">
+            <div class="product-content reveal" style="display:block;">
+                <div class="workflow-container">
+                    <div class="workflow-steps">
+                        <div class="w-step active" data-img="cpt-1" onclick="switchWorkflow(this)">
+                            <h4>1. اختيار الطاولة</h4>
+                            <p>يختار الكابتن طاولة لبدء أخذ الطلب.</p>
+                            <div class="w-step-progress"><div class="w-step-progress-bar"></div></div>
+                        </div>
+                        <div class="w-step" data-img="cpt-2" onclick="switchWorkflow(this)">
+                            <h4>2. عرض القائمة</h4>
+                            <p>تصفح القائمة الرقمية مباشرة عند الطاولة.</p>
+                            <div class="w-step-progress"><div class="w-step-progress-bar"></div></div>
+                        </div>
+                        <div class="w-step" data-img="cpt-3" onclick="switchWorkflow(this)">
+                            <h4>3. إضافة عناصر</h4>
+                            <p>أدخل العناصر بسلاسة أثناء التحدث مع الضيف.</p>
+                            <div class="w-step-progress"><div class="w-step-progress-bar"></div></div>
+                        </div>
+                        <div class="w-step" data-img="cpt-4" onclick="switchWorkflow(this)">
+                            <h4>4. مزامنة فورية</h4>
+                            <p>يظهر الطلب فورًا على جهاز نقاط البيع الرئيسي ونظام KDS.</p>
+                            <div class="w-step-progress"><div class="w-step-progress-bar"></div></div>
+                        </div>
+                    </div>
+                    <div class="pnl-device pnl-phone" id="captainDevice" style="position:relative; transition: all 0.5s ease;">
+                        <div class="pnl-bezel">
+                            <div class="pnl-notch"></div>
+                            <div class="workflow-visual">
+                                <img src="../images/cpt-1.png" id="cpt-1" class="active contain-img" alt="Captain 1">
+                                <img src="../images/cpt-2.png" id="cpt-2" class="contain-img" alt="Captain 2">
+                                <img src="../images/cpt-3.png" id="cpt-3" class="contain-img" alt="Captain 3">
+                                <img src="../images/cpt-4.png" id="cpt-4" class="contain-img" alt="Captain 4">
+                            </div>
+                            <div class="pnl-home-bar"></div>
+                        </div>
+                        <div class="pnl-stand cpt-stand"></div>
+                        <div class="pnl-base cpt-base"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- KDS Panel -->
+        <div class="product-panel" data-panel="kds">
+            <div class="product-content reveal" style="display:block;">
+                <div class="workflow-container">
+                    <div class="workflow-steps">
+                        <div class="w-step active" data-img="kds-img-1" onclick="switchWorkflow(this)">
+                            <h4>1. استلام الطلب</h4>
+                            <p>يصل طلب المطبخ مع مؤقت حي يوضح وقت التحضير.</p>
+                            <div class="w-step-progress"><div class="w-step-progress-bar"></div></div>
+                        </div>
+                        <div class="w-step" data-img="kds-img-2" onclick="switchWorkflow(this)">
+                            <h4>2. تحديد كجاهز</h4>
+                            <p>ينقر الطاهي لتعليم العناصر كجاهزة، مما يحدّث شريط التقدم.</p>
+                            <div class="w-step-progress"><div class="w-step-progress-bar"></div></div>
+                        </div>
+                        <div class="w-step" data-img="kds-img-3" onclick="switchWorkflow(this)">
+                            <h4>3. تقديم الطلب</h4>
+                            <p>يُمسح الطلب من الشاشة عند تقديمه بشكل مثالي.</p>
+                            <div class="w-step-progress"><div class="w-step-progress-bar"></div></div>
+                        </div>
+                    </div>
+                    <div class="pnl-device pnl-tablet">
+                        <div class="pnl-bezel">
+                            <div class="pnl-cam"></div>
+                            <div class="workflow-visual">
+                                <img src="../images/kds-1.png" id="kds-img-1" class="active contain-img" alt="KDS 1">
+                                <img src="../images/kds-2.png" id="kds-img-2" class="contain-img" alt="KDS 2">
+                                <img src="../images/kds-3.png" id="kds-img-3" class="contain-img" alt="KDS 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- CONNECTED WORKFLOW                      -->
+<!-- ═══════════════════════════════════════ -->
+<section id="workflow" class="section">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-eyebrow">كيف تعمل</span>
+            <h2 class="section-title">من الجلوس إلى الدفع.<br>كل خطوة متصلة.</h2>
+        </div>
+        <div class="workflow-track">
+            <div class="workflow-line"><div class="workflow-line-fill" id="workflowFill"></div></div>
+            <div class="workflow-steps">
+                <div class="workflow-step active" data-step="1">
+                    <div class="step-icon">🪑</div>
+                    <div class="step-content">
+                        <div class="step-label">جلوس الضيف</div>
+                        <div class="step-desc">تتغير حالة الطاولة إلى مشغولة على جميع الأجهزة</div>
+                    </div>
+                </div>
+                <div class="workflow-step" data-step="2">
+                    <div class="step-icon">📱</div>
+                    <div class="step-content">
+                        <div class="step-label">الكابتن يأخذ الطلب</div>
+                        <div class="step-desc">يتم تسجيل الطلب من تطبيق الكابتن عند الطاولة</div>
+                    </div>
+                </div>
+                <div class="workflow-step" data-step="3">
+                    <div class="step-icon">🖥</div>
+                    <div class="step-content">
+                        <div class="step-label">تحديث نقاط البيع</div>
+                        <div class="step-desc">تتزامن سلة الطلبات وحالة الطاولة مع الكاونتر فورًا</div>
+                    </div>
+                </div>
+                <div class="workflow-step" data-step="4">
+                    <div class="step-icon">🍳</div>
+                    <div class="step-content">
+                        <div class="step-label">طلب في المطبخ</div>
+                        <div class="step-desc">يعرض شاشة المطبخ الطلب — يبدأ الطاهي في الطهي</div>
+                    </div>
+                </div>
+                <div class="workflow-step" data-step="5">
+                    <div class="step-icon">🧾</div>
+                    <div class="step-content">
+                        <div class="step-label">طباعة الفاتورة</div>
+                        <div class="step-desc">فاتورة متوافقة مع ضريبة القيمة المضافة مع تفصيل الضرائب</div>
+                    </div>
+                </div>
+                <div class="workflow-step" data-step="6">
+                    <div class="step-icon">✅</div>
+                    <div class="step-content">
+                        <div class="step-label">تم الدفع</div>
+                        <div class="step-desc">تم استلام المبلغ — تصبح الطاولة متاحة مرة أخرى</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- REAL-TIME SYNC                          -->
+<!-- ═══════════════════════════════════════ -->
+<section id="realtime" class="section section-dark">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-eyebrow" style="color:#e63946">في الوقت الفعلي</span>
+            <h2 class="section-title" style="color:#fff">كل جهاز يرى كل تغيير.<br>فورًا.</h2>
+            <p class="section-subtitle" style="color:rgba(255,255,255,.6)">عندما يضيف الكابتن صنفًا، تتحدث نقاط البيع وشاشة المطبخ في غضون أجزاء من الثانية. بدون تحديث الصفحة. بدون تأخير. مزامنة مدعومة بتقنية WebSocket عبر جميع الأجهزة المتصلة.</p>
+        </div>
+        <div class="sync-demo reveal">
+            <div class="sync-device" id="syncCaptain">
+                <div class="sync-device-label">تطبيق الكابتن</div>
+                <div class="sync-device-screen">
+                    <div class="sync-item" id="syncItem1">+ دجاج بالزبدة ×1</div>
+                    <div class="sync-item">+ نان بالثوم ×2</div>
+                </div>
+                <div class="sync-pulse" id="syncPulse1"></div>
+            </div>
+            <div class="sync-arrow">
+                <svg width="40" height="24"><path d="M0 12h30m0 0l-6-6m6 6l-6 6" stroke="#e63946" stroke-width="2" fill="none"/></svg>
+            </div>
+            <div class="sync-device" id="syncPOS">
+                <div class="sync-device-label">نقاط البيع (POS)</div>
+                <div class="sync-device-screen">
+                    <div class="sync-table-status">
+                        <span>طاولة 2</span>
+                        <span class="sync-status" id="syncTableStatus">متاحة</span>
+                    </div>
+                    <div class="sync-cart-preview" id="syncCartPreview">—</div>
+                </div>
+                <div class="sync-pulse" id="syncPulse2"></div>
+            </div>
+            <div class="sync-arrow">
+                <svg width="40" height="24"><path d="M0 12h30m0 0l-6-6m6 6l-6 6" stroke="#e63946" stroke-width="2" fill="none"/></svg>
+            </div>
+            <div class="sync-device" id="syncKDS">
+                <div class="sync-device-label">شاشة المطبخ</div>
+                <div class="sync-device-screen">
+                    <div class="sync-kot" id="syncKot">في انتظار الطلبات...</div>
+                </div>
+                <div class="sync-pulse" id="syncPulse3"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- OFFLINE-FIRST                           -->
+<!-- ═══════════════════════════════════════ -->
+<section id="offline" class="section section-alt">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-eyebrow">الموثوقية</span>
+            <h2 class="section-title">ينقطع الإنترنت.<br>لكن مطعمك يستمر.</h2>
+            <p class="section-subtitle">ريستوفا يحفظ كل شيء محليًا على كل جهاز. عندما ينقطع الاتصال، تستمر الفواتير وطلبات المطبخ وإدارة الطاولات في العمل. وعندما يعود، يتزامن كل شيء تلقائيًا.</p>
+        </div>
+        <div class="offline-demo reveal">
+            <div class="offline-step active" data-state="online">
+                <div class="offline-indicator green"></div>
+                <div class="offline-label">متصل</div>
+                <div class="offline-desc">جميع الأجهزة تتزامن بشكل طبيعي</div>
+            </div>
+            <div class="offline-connector"></div>
+            <div class="offline-step" data-state="lost">
+                <div class="offline-indicator red"></div>
+                <div class="offline-label">انقطع الاتصال</div>
+                <div class="offline-desc">انقطاع الإنترنت بشكل غير متوقع</div>
+            </div>
+            <div class="offline-connector"></div>
+            <div class="offline-step" data-state="working">
+                <div class="offline-indicator amber"></div>
+                <div class="offline-label">العمل بلا إنترنت</div>
+                <div class="offline-desc">نقاط البيع تعمل بشكل طبيعي — الطلبات تُحفظ محليًا</div>
+            </div>
+            <div class="offline-connector"></div>
+            <div class="offline-step" data-state="synced">
+                <div class="offline-indicator green"></div>
+                <div class="offline-label">تم الاتصال والمزامنة</div>
+                <div class="offline-desc">جميع التغييرات المحفوظة تُرفع تلقائيًا</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- FEATURES                                -->
+<!-- ═══════════════════════════════════════ -->
+<section id="features" class="section">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-eyebrow">الميزات</span>
+            <h2 class="section-title">كل ما يحتاجه المطعم.<br>ولا شيء غير ذلك.</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-group reveal">
+                <div class="feature-icon">🖥</div>
+                <h3>العمليات</h3>
+                <ul>
+                    <li>إدارة مرئية للطاولات مع تخطيطات متعددة الطوابق</li>
+                    <li>فواتير سريعة مع سلة الطلبات، المعدّلات، والخصومات</li>
+                    <li>طلبات محلي، سفري، وتوصيل</li>
+                    <li>طلبات ضيافة ورسوم خدمة</li>
+                    <li>تسوية تلقائية وإعادة ضبط الطاولات عند 3 صباحًا</li>
+                </ul>
+            </div>
+            <div class="feature-group reveal">
+                <div class="feature-icon">👨‍🍳</div>
+                <h3>طاقم العمل</h3>
+                <ul>
+                    <li>تطبيق الكابتن للطلبات عند الطاولة</li>
+                    <li>تسجيل دخول برمز PIN مع وصول حسب الدور</li>
+                    <li>مستويات صلاحيات للمالك، المشرف، والموظف</li>
+                    <li>تتبع أداء مبيعات الموظفين</li>
+                    <li>تعيين الأدوار على مستوى الجهاز</li>
+                </ul>
+            </div>
+            <div class="feature-group reveal">
+                <div class="feature-icon">🍳</div>
+                <h3>المطبخ</h3>
+                <ul>
+                    <li>نظام عرض المطبخ مع طلبات في الوقت الفعلي</li>
+                    <li>طباعة تذاكر المطبخ الحرارية</li>
+                    <li>تصفية المحطات — المطبخ الساخن، التنور، البار</li>
+                    <li>سير عمل "اضغط لتحديد كجاهز"</li>
+                    <li>توقيت الطلبات لضبط المطبخ</li>
+                </ul>
+            </div>
+            <div class="feature-group reveal">
+                <div class="feature-icon">📊</div>
+                <h3>الأعمال</h3>
+                <ul>
+                    <li>لوحة تحكم مع الإيرادات، الطلبات، والأهداف اليومية</li>
+                    <li>تقارير الضرائب مع تفصيل الضرائب المطبقة</li>
+                    <li>مبيعات حسب الفئة، الموظف، طريقة الدفع، والساعة</li>
+                    <li>ملخص تنفيذي وتصدير إلى Excel</li>
+                    <li>أرشيفات تقارير تاريخية</li>
+                </ul>
+            </div>
+            <div class="feature-group reveal">
+                <div class="feature-icon">💳</div>
+                <h3>المدفوعات</h3>
+                <ul>
+                    <li>نقدًا، بطاقة، التحويل البنكي (UPI)، آجل، وطرق أخرى</li>
+                    <li>دعم تقسيم الدفع</li>
+                    <li>طباعة فواتير متوافقة مع الضرائب</li>
+                    <li>نسب ضرائب قابلة للتكوين (5%، 12%، 18%)</li>
+                    <li>إعداد رسوم الخدمة</li>
+                </ul>
+            </div>
+            <div class="feature-group reveal">
+                <div class="feature-icon">🔒</div>
+                <h3>الموثوقية</h3>
+                <ul>
+                    <li>100% يدعم العمل بدون إنترنت</li>
+                    <li>مزامنة WebSocket في الوقت الفعلي عبر جميع الأجهزة</li>
+                    <li>طابور مزامنة تلقائي عند عودة الاتصال</li>
+                    <li>دعم أجهزة متعددة مع مصادقة JWT</li>
+                    <li>نسخ احتياطي سحابي على شبكة Cloudflare العالمية</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- HQ OVERVIEW                             -->
+<!-- ═══════════════════════════════════════ -->
+<section id="owner" class="section section-tint">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-eyebrow">لوحة تحكم المالك</span>
+            <h2 class="section-title">مطعمك،<br>في جيبك.</h2>
+            <p class="section-subtitle">إدارة القوائم، عرض تقارير في الوقت الفعلي، وتكوين الإعدادات من أي مكان. تمنحك لوحة تحكم المالك السيطرة الكاملة على عملك، حتى وأنت بعيد عنه.</p>
+        </div>
+        
+        <div class="owner-advanced-showcase reveal">
+            <!-- White Desktop Monitor -->
+            <div class="white-monitor">
+                <div class="monitor-bezel">
+                    <div class="monitor-screen">
+                        <img src="../images/owner-dashboard.png" id="o-img-1" class="active" alt="Live Dashboard" loading="lazy">
+                        <img src="../images/owner-menu.png" id="o-img-2" alt="Menu Management" loading="lazy">
+                        <img src="../images/owner-report.png" id="o-img-3" alt="Deep Reporting" loading="lazy">
+                        <img src="../images/owner-setting.png" id="o-img-4" alt="Remote Settings" loading="lazy">
+                    </div>
+                </div>
+                <div class="monitor-stand"></div>
+                <div class="monitor-base"></div>
+
+            </div>
+
+
+            <!-- Interactive Controls -->
+            <div class="owner-controls" id="ownerControls">
+                <div class="o-step active" onclick="switchOwnerStep(1)">
+                    <h4>لوحة تحكم حية</h4>
+                    <div class="o-progress"><div class="o-bar"></div></div>
+                </div>
+                <div class="o-step" onclick="switchOwnerStep(2)">
+                    <h4>إدارة القائمة</h4>
+                    <div class="o-progress"><div class="o-bar"></div></div>
+                </div>
+                <div class="o-step" onclick="switchOwnerStep(3)">
+                    <h4>تقارير عميقة</h4>
+                    <div class="o-progress"><div class="o-bar"></div></div>
+                </div>
+                <div class="o-step" onclick="switchOwnerStep(4)">
+                    <h4>إعدادات عن بُعد</h4>
+                    <div class="o-progress"><div class="o-bar"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- PRICING                                 -->
+<!-- ═══════════════════════════════════════ -->
+<section id="pricing" class="section">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-eyebrow">الأسعار</span>
+            <h2 class="section-title">أسعار بسيطة وشفافة.</h2>
+            <p class="section-subtitle">تشمل جميع الخطط الاستضافة السحابية، التحديثات التلقائية، والدعم. بدون رسوم خفية. بدون رسوم على كل معاملة.</p>
+        </div>
+        <div class="pricing-cards reveal">
+            <div class="price-card">
+                <div class="price-plan">المبتدئ</div>
+                <div class="price-amount">₹850</div>
+                <div class="price-period">شهريًا</div>
+                <div class="price-desc">للمطاعم الصغيرة التي تبدأ رحلتها</div>
+                <ul class="price-features">
+                    <li><strong>1</strong> نقطة بيع (POS)</li>
+                    <li><strong>1</strong> شاشة مطبخ</li>
+                    <li><strong>1</strong> تطبيق كابتن</li>
+                    <li>⬇ تصدير الضرائب إلى Excel</li>
+                    <li>⬇ تقارير الملخص التنفيذي</li>
+                    <li>⬇ تقارير يومية/أسبوعية/شهرية</li>
+                    <li>دعم عبر واتساب والمكالمات</li>
+                </ul>
+                <a href="#register" class="btn-secondary btn-block">ابدأ الآن</a>
+            </div>
+            <div class="price-card featured">
+                <div class="price-badge">الأكثر شعبية</div>
+                <div class="price-plan">النمو</div>
+                <div class="price-amount">₹1,250</div>
+                <div class="price-period">شهريًا</div>
+                <div class="price-desc">للمطاعم النامية ذات الفِرق</div>
+                <ul class="price-features">
+                    <li><strong>1</strong> نقطة بيع (POS)</li>
+                    <li><strong>2</strong> شاشات مطبخ</li>
+                    <li><strong>3</strong> تطبيقات كابتن</li>
+                    <li>⬇ تصدير الضرائب إلى Excel</li>
+                    <li>⬇ تقارير الملخص التنفيذي</li>
+                    <li>⬇ تقارير يومية/أسبوعية/شهرية</li>
+                    <li>دعم عبر واتساب والمكالمات</li>
+                </ul>
+                <a href="#register" class="btn-primary btn-block">ابدأ الآن</a>
+            </div>
+            <div class="price-card">
+                <div class="price-plan">الشركات</div>
+                <div class="price-amount">₹3,999</div>
+                <div class="price-period">شهريًا</div>
+                <div class="price-desc">للسلاسل متعددة الفروع</div>
+                <ul class="price-features">
+                    <li><strong>3</strong> نقاط بيع (POS)</li>
+                    <li><strong>5</strong> شاشات مطبخ</li>
+                    <li><strong>8</strong> تطبيقات كابتن</li>
+                    <li>⬇ تصدير الضرائب إلى Excel</li>
+                    <li>⬇ تقارير الملخص التنفيذي</li>
+                    <li>⬇ تقارير يومية/أسبوعية/شهرية</li>
+                    <li>دعم عبر واتساب والمكالمات</li>
+                </ul>
+                <a href="#register" class="btn-secondary btn-block">تواصل مع المبيعات</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- FAQ                                     -->
+<!-- ═══════════════════════════════════════ -->
+<section id="faq" class="section section-alt">
+    <div class="container container-narrow">
+        <div class="section-header reveal">
+            <span class="section-eyebrow">الأسئلة الشائعة</span>
+            <h2 class="section-title">أسئلة شائعة.</h2>
+        </div>
+        <div class="faq-list reveal">
+            <div class="faq-item">
+                <button class="faq-question">ما هو ريستوفا؟<span class="faq-icon">+</span></button>
+                <div class="faq-answer"><p>ريستوفا هو نظام تشغيل متكامل للمطاعم يتضمن نقاط بيع (POS) للفواتير، تطبيق كابتن للطلبات عند الطاولة، ونظام عرض المطبخ (KDS) لإدارة طلبات المطبخ. تعمل جميع المنتجات الثلاثة معًا في الوقت الفعلي.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">ما الفرق بين POS و Captain و KDS؟<span class="faq-icon">+</span></button>
+                <div class="faq-answer"><p><strong>POS</strong> يجلس على كاونتر الحسابات — يتعامل مع الطاولات، الفواتير، المدفوعات، والتقارير. <strong>تطبيق الكابتن</strong> مخصص للنُدل — يأخذون الطلبات عند الطاولة من هواتفهم. <strong>KDS</strong> هي شاشة المطبخ — يرى الطهاة الطلبات في الوقت الفعلي ويحددونها كجاهزة. جميعها تتزامن تلقائيًا.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">هل يعمل بدون إنترنت؟<span class="faq-icon">+</span></button>
+                <div class="faq-answer"><p>نعم. بُني ريستوفا ليعمل بدون إنترنت كأولوية. تُحفظ جميع البيانات محليًا على كل جهاز. عند انقطاع الإنترنت، يمكنك الاستمرار في الفوترة، وطباعة طلبات المطبخ، وإدارة الطاولات. عند عودة الاتصال، تتزامن جميع التغييرات تلقائيًا مع السحابة.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">كيف تعمل المزامنة في الوقت الفعلي؟<span class="faq-icon">+</span></button>
+                <div class="faq-answer"><p>يستخدم ريستوفا اتصالات WebSocket بين جميع الأجهزة. عندما يضيف الكابتن عنصرًا إلى طاولة، تتحدث نقاط البيع و KDS في أجزاء من الثانية. لا حاجة لتحديث الصفحة. تنتقل التغييرات إلى جميع الأجهزة المتصلة تلقائيًا.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">هل يمكنني استخدام طابعتي الحرارية الحالية؟<span class="faq-icon">+</span></button>
+                <div class="faq-answer"><p>يعمل ريستوفا مع الطابعات الحرارية القياسية التي تدعم الطباعة من المتصفح. يمكنك إعداد طابعات منفصلة للمطبخ (KOT) وفواتير العملاء. لا يتطلب الأمر شراء أجهزة خاصة.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">كيف تتم عملية الإعداد؟<span class="faq-icon">+</span></button>
+                <div class="faq-answer"><p>سجل مطعمك على موقعنا. سيتواصل فريقنا معك خلال 24 ساعة. سنقوم بإعداد نسخة ريستوفا الخاصة بك بقائمتك، تخطيط الطاولات، إعدادات الضرائب، وحسابات الموظفين. يتم نشر نقاط البيع الخاصة بمطعمك على شبكة Cloudflare العالمية لأقصى سرعة وموثوقية.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">ما هي المطاعم التي يناسبها ريستوفا؟<span class="faq-icon">+</span></button>
+                <div class="faq-answer"><p>ريستوفا مصمم للمطاعم ذات الصالات، المقاهي، مطاعم الوجبات السريعة، المطابخ السحابية، والسلاسل متعددة الفروع في الهند وغيرها. سواء كان لديك 5 طاولات أو 50، يتوسع النظام ليناسب احتياجاتك.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">هل بياناتي آمنة؟<span class="faq-icon">+</span></button>
+                <div class="faq-answer"><p>تُخزن جميع البيانات على شبكة Cloudflare العالمية بتقنية قواعد بيانات D1. يحصل كل مطعم على قاعدة بيانات معزولة خاصة به. تستخدم مصادقة الأجهزة رموز JWT، ويتطلب وصول المشرف بيانات اعتماد مشفرة بـ SHA-256. بياناتك مشفرة أثناء النقل وأثناء السكون.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- REGISTER                                -->
+<!-- ═══════════════════════════════════════ -->
+<section id="register" class="section section-dark">
+    <div class="container">
+        <div class="register-layout reveal">
+            <div class="register-info">
+                <span class="section-eyebrow" style="color:#e63946">ابدأ الآن</span>
+                <h2 class="section-title" style="color:#fff">سجل مطعمك.</h2>
+                <p style="color:rgba(255,255,255,.6);font-size:1.05rem;line-height:1.7;margin-bottom:2rem">املأ بياناتك وسيقوم فريقنا بإعداد نظام ريستوفا بالكامل خلال 24 ساعة. لا يلزم بطاقة ائتمان للبدء.</p>
+                <div class="trust-points">
+
+                    <div class="trust-point">
+                        <span class="trust-icon">🔧</span>
+                        <div>
+                            <strong>إعداد كامل</strong>
+                            <span>القائمة، الطاولات، الضرائب — كل شيء يُعد لك</span>
+                        </div>
+                    </div>
+                    <div class="trust-point">
+                        <span class="trust-icon">📞</span>
+                        <div>
+                            <strong>دعم مباشر</strong>
+                            <span>دعم عبر واتساب والبريد الإلكتروني من اليوم الأول</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form class="register-form" id="registerForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="regName">اسم المطعم *</label>
+                        <input type="text" id="regName" required placeholder="مثل مطعم السلطان">
+                    </div>
+                    <div class="form-group">
+                        <label for="regOwner">اسم المالك *</label>
+                        <input type="text" id="regOwner" required placeholder="مثل عامر خان">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="regPhone">رقم الهاتف *</label>
+                        <input type="tel" id="regPhone" required placeholder="+91 98765 43210">
+                    </div>
+                    <div class="form-group">
+                        <label for="regEmail">البريد الإلكتروني *</label>
+                        <input type="email" id="regEmail" required placeholder="owner@restaurant.com">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="regCity">المدينة *</label>
+                        <input type="text" id="regCity" required placeholder="مثل دبي أو مومباي">
+                    </div>
+                    <div class="form-group">
+                        <label for="regTables">عدد الطاولات</label>
+                        <input type="number" id="regTables" placeholder="مثل 20" min="1">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="regCurrentPOS">نظام نقاط البيع الحالي</label>
+                    <select id="regCurrentPOS">
+                        <option value="">اختر...</option>
+                        <option value="none">لا يوجد — أستخدم الورق/يدوي</option>
+                        <option value="petpooja">Petpooja</option>
+                        <option value="posist">Posist</option>
+                        <option value="torqus">Torqus</option>
+                        <option value="dotpe">DotPe</option>
+                        <option value="other">أخرى</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="regMessage">رسالة (اختياري)</label>
+                    <textarea id="regMessage" rows="3" placeholder="أخبرنا عن مطعمك أو أي متطلبات خاصة..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary btn-lg btn-block" id="registerBtn">
+                    التسجيل عبر واتساب
+                </button>
+                <p class="form-note">سنتواصل معك عبر واتساب خلال 24 ساعة لإعداد مطعمك.</p>
+                <div class="form-success" id="formSuccess" style="display:none">
+                    <div class="success-icon">✅</div>
+                    <h3>تم إرسال التسجيل!</h3>
+                    <p>لقد استلمنا بياناتك. سيتواصل فريقنا معك عبر واتساب خلال 24 ساعة.</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- FOOTER                                  -->
+<!-- ═══════════════════════════════════════ -->
+<footer id="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="/logo.png" alt="Restova" width="32" height="32">
+                    <span>ريستوفا</span>
+                </div>
+                <p>نظام تشغيل متكامل للمطاعم. نقاط البيع، تطبيق الكابتن، وعرض المطبخ — متصلة في الوقت الفعلي.</p>
+            </div>
+            <div class="footer-col">
+                <h4>المنتجات</h4>
+                <a href="#products">نقاط بيع ريستوفا</a>
+                <a href="#products">تطبيق الكابتن</a>
+                <a href="#products">عرض المطبخ</a>
+                <a href="#hq">مقر ريستوفا</a>
+            </div>
+            <div class="footer-col">
+                <h4>الشركة</h4>
+                <a href="#pricing">الأسعار</a>
+                <a href="#faq">الأسئلة الشائعة</a>
+                <a href="#register">التسجيل</a>
+                <a href="mailto:aamirldz07@gmail.com">الدعم</a>
+            </div>
+            <div class="footer-col">
+                <h4>تواصل معنا</h4>
+                <a href="mailto:aamirldz07@gmail.com">aamirldz07@gmail.com</a>
+                <a href="https://wa.me/919939525676" target="_blank">+91 9939525676</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 شركة ريستوفا للتقنيات المحدودة. جميع الحقوق محفوظة.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="/main.js?v=8"></script>
+</body>
+</html>

@@ -5031,6 +5031,29 @@ footer {
     /* Products section */
     .product-content { grid-template-columns: 1fr !important; }
     .product-visual { order: -1 !important; }
+    
+    /* Product tabs inline for tablet/mobile */
+    .product-tabs { 
+        flex-direction: row !important; 
+        align-items: center !important; 
+        justify-content: flex-start !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        padding-bottom: 8px !important;
+        scrollbar-width: none;
+        gap: 8px !important;
+    }
+    .product-tabs::-webkit-scrollbar { display: none; }
+    .product-tab { flex-shrink: 0 !important; }
+
+    /* Reduce free space between device, description card, and arrows */
+    .workflow-container {
+        gap: 10px !important;
+        padding: 15px 10px !important;
+    }
+    .workflow-container .pnl-device { margin-bottom: 0 !important; }
+    .workflow-mobile-nav { margin-top: 5px !important; }
 
     /* Register section */
     .register-layout { grid-template-columns: 1fr !important; }
@@ -5114,8 +5137,37 @@ footer {
     /* Stats row */
     .hero-stats { flex-direction: row !important; flex-wrap: wrap !important; justify-content: center !important; gap: 16px !important; }
 
-    /* Product tabs stack */
-    .product-tabs { flex-direction: column !important; align-items: stretch !important; }
+    /* Product tabs inline */
+    .product-tabs { 
+        flex-direction: row !important; 
+        align-items: center !important; 
+        justify-content: flex-start !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        padding-bottom: 8px !important;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;  /* IE and Edge */
+        gap: 8px !important;
+    }
+    .product-tabs::-webkit-scrollbar {
+        display: none;
+    }
+    .product-tab {
+        flex-shrink: 0 !important;
+    }
+
+    /* Reduce free space between device, description card, and arrows */
+    .workflow-container {
+        gap: 10px !important;
+        padding: 15px 10px !important;
+    }
+    .workflow-container .pnl-device {
+        margin-bottom: 0 !important;
+    }
+    .workflow-mobile-nav {
+        margin-top: 5px !important;
+    }
 }
 
 /* Phone bezel pseudo-element cleanup (all sizes) */
@@ -5135,4 +5187,57 @@ html, body {
 }
 .hero-product-stage {
     overflow: visible !important; /* Let devices render visually */
+}
+
+/* ═══════ HIDE UNWANTED UI ELEMENTS ═══════ */
+.workflow-mobile-nav {
+    display: none !important;
+}
+.workflow-visual::after {
+    display: none !important;
+}
+
+/* ═══════ LANGUAGE SWITCHER ═══════ */
+.lang-switch {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--dark);
+    text-decoration: none;
+    margin-right: 15px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: all 0.2s;
+    background: rgba(0,0,0,0.03);
+}
+.lang-switch:hover {
+    background: rgba(0,0,0,0.08);
+}
+.lang-switch-mobile {
+    display: block;
+    margin-top: 10px;
+    color: var(--primary) !important;
+    font-weight: 600;
+}
+
+/* RTL OVERRIDES */
+html[dir="rtl"] {
+    text-align: right;
+}
+html[dir="rtl"] .hero-product-stage,
+html[dir="rtl"] .workflow-visual {
+    /* Prevent device hardware from flipping and breaking layout */
+    direction: ltr !important;
+}
+html[dir="rtl"] .nav-inner {
+    flex-direction: row-reverse;
+}
+html[dir="rtl"] .hero-inner,
+html[dir="rtl"] .product-content {
+    direction: rtl;
+}
+html[dir="rtl"] .workflow-step {
+    text-align: right;
+}
+html[dir="rtl"] .btn-primary {
+    font-family: inherit;
 }

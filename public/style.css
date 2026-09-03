@@ -4946,13 +4946,15 @@ footer {
     margin: 0 !important;
 }
 
-/* Responsive Tweaks */
-.hero-text {
-    position: relative !important;
-    left: -40px !important;
-}
-.hero-stats {
-    gap: 20px !important; /* Pulls the 3rd stat inwards (to the left) */
+/* Desktop-only hero offsets (do NOT apply on mobile) */
+@media (min-width: 1025px) {
+    .hero-text {
+        position: relative !important;
+        left: -40px !important;
+    }
+    .hero-stats {
+        gap: 20px !important;
+    }
 }
 
 /* Increase Navbar Logo Size */

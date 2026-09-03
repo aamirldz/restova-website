@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /mock-*.html
 
-Sitemap: https://restova.com/sitemap.xml
+Sitemap: https://restova.aamirakwarali.com.np/sitemap.xml

@@ -4978,7 +4978,8 @@ footer {
         width: 100vw !important;
         max-width: 100% !important;
         overflow: hidden !important;
-        padding-top: 40px !important;
+        padding-top: 120px !important;
+        padding-bottom: 60px !important;
     }
     .hero-inner.container {
         display: flex !important;

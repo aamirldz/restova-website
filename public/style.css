@@ -88,15 +88,19 @@ button,input,select,textarea{font-family:inherit;font-size:inherit}
 #navbar.scrolled .nav-actions .btn-ghost:hover{background:rgba(0,0,0,.05);color:var(--text)}
 .nav-actions .btn-primary{font-size:.85rem;padding:8px 18px}
 .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px}
-.menu-toggle span{display:block;width:22px;height:2px;background:#fff;transition:.3s}
+.menu-toggle span{display:block;width:22px;height:2px;background:var(--text);transition:.3s}
 #navbar.scrolled .menu-toggle span{background:var(--text)}
 
 /* Mobile Menu */
-.mobile-menu{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;opacity:0;pointer-events:none;transition:opacity .3s}
+.mobile-menu{position:fixed;inset:0;background:rgba(17, 24, 39, 0.98);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:all .3s cubic-bezier(0.4, 0, 0.2, 1)}
 .mobile-menu.active{opacity:1;pointer-events:auto}
-.mobile-menu a{color:#fff;font-size:1.3rem;font-weight:600}
-.mobile-menu hr{width:60px;border:none;border-top:1px solid rgba(255,255,255,.15);margin:8px 0}
-.mobile-menu .btn-primary{margin-top:8px}
+.mobile-menu-inner{display:flex;flex-direction:column;align-items:center;gap:32px;transform:translateY(20px);transition:transform .4s cubic-bezier(0.4, 0, 0.2, 1);transition-delay:.1s}
+.mobile-menu.active .mobile-menu-inner{transform:translateY(0)}
+.mobile-menu a:not(.btn-primary){color:#fff;font-size:1.4rem;font-weight:600;text-decoration:none;transition:color .2s}
+.mobile-menu a:hover:not(.btn-primary){color:var(--primary)}
+.mobile-menu .lang-switch-mobile{display:flex;align-items:center;gap:8px;font-size:1.1rem !important;background:rgba(255,255,255,0.1);padding:10px 24px;border-radius:var(--r-xl);color:rgba(255,255,255,0.9) !important}
+.mobile-menu hr{width:80px;border:none;border-top:1px solid rgba(255,255,255,.15);margin:8px 0}
+.mobile-menu .btn-primary{margin-top:8px;font-size:1.1rem;padding:14px 32px;width:100%;text-align:center}
 
 /* ═══════════════════════════════════════════════
    HERO

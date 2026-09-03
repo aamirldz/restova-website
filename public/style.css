@@ -3443,6 +3443,7 @@ footer {
     border: 1px solid #e2e8f0;
     border-radius: 16px;
     padding: 32px 24px;
+    align-items: flex-start !important; /* Fix horizontal lines cutting through text */
 }
 
 .offline-step {
@@ -3472,6 +3473,7 @@ footer {
 .offline-connector {
     background: #e2e8f0 !important;
     height: 2px !important;
+    margin-top: 21px !important; /* Align perfectly with dots */
 }
 
 
@@ -5251,3 +5253,84 @@ html[dir="rtl"] .workflow-step {
 html[dir="rtl"] .btn-primary {
     font-family: 'Cairo', 'Inter', sans-serif !important;
 }
+
+/* Fix 1: Feature Bullets in RTL */
+html[dir="rtl"] .feature-group li {
+    padding-left: 0 !important;
+    padding-right: 18px !important;
+}
+html[dir="rtl"] .feature-group li::before {
+    left: auto !important;
+    right: 4px !important;
+}
+
+/* Fix 2: Sync Demo Arrows & Gap in RTL */
+html[dir="rtl"] .sync-arrow svg {
+    transform: scaleX(-1) !important;
+}
+html[dir="rtl"] .sync-demo {
+    grid-template-columns: 1fr auto 1fr auto 1fr !important;
+    gap: 30px !important; /* Increase gap so Arabic text doesn't overlap arrows */
+}
+
+/* Fix 3: Workflow Zig-Zag Alignment in RTL */
+html[dir="rtl"] .workflow-track {
+    direction: ltr !important; /* Keep the physical LTR zig-zag flow */
+}
+html[dir="rtl"] .workflow-track .step-content {
+    direction: rtl !important;
+    text-align: right !important;
+}
+html[dir="rtl"] .workflow-track .workflow-step:nth-child(odd) .step-content {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    padding-left: 20px !important;
+    padding-right: 0 !important;
+}
+html[dir="rtl"] .workflow-track .workflow-step:nth-child(even) .step-content {
+    margin-right: auto !important;
+    margin-left: 0 !important;
+    padding-right: 20px !important;
+    padding-left: 0 !important;
+}
+html[dir="rtl"] .workflow-line {
+    left: 50% !important;
+    margin-left: -2px !important; /* 4px wide line */
+    transform: none !important;
+}
+html[dir="rtl"] .step-icon {
+    left: 50% !important;
+    top: 50% !important;
+    margin-left: -28px !important; /* 56px wide icon */
+    margin-top: -28px !important;
+    transform: none !important;
+}
+
+/* Fix 4: Mobile RTL Overrides */
+@media (max-width: 768px) {
+    html[dir="rtl"] .workflow-line {
+        left: auto !important;
+        right: 30px !important;
+        margin-right: -2px !important;
+        margin-left: 0 !important;
+    }
+    html[dir="rtl"] .step-icon {
+        left: auto !important;
+        right: 30px !important;
+        margin-right: -28px !important;
+        margin-left: 0 !important;
+    }
+    html[dir="rtl"] .workflow-track .workflow-step:nth-child(odd) .step-content,
+    html[dir="rtl"] .workflow-track .workflow-step:nth-child(even) .step-content {
+        margin-right: auto !important;
+        margin-left: 0 !important;
+        text-align: right !important;
+    }
+    html[dir="rtl"] .sync-demo {
+        grid-template-columns: 1fr !important;
+    }
+    html[dir="rtl"] .sync-arrow {
+        transform: rotate(90deg) scaleX(-1) !important;
+    }
+}
+

@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /mock-*.html
+
+Sitemap: https://restova.com/sitemap.xml

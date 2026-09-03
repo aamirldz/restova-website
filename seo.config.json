@@ -1,0 +1,20 @@
+{
+    "canonical_domain": "https://restova.com",
+    "public_routes": [
+        {
+            "path": "/",
+            "lang": "en",
+            "priority": 1.0,
+            "changefreq": "weekly"
+        },
+        {
+            "path": "/ar/",
+            "lang": "ar",
+            "priority": 1.0,
+            "changefreq": "weekly"
+        }
+    ],
+    "disallowed_paths": [
+        "/mock-*.html"
+    ]
+}

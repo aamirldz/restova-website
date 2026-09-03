@@ -1,34 +1,43 @@
 import json
 import os
 import glob
-import re
 
 def build():
-    print("SEO Build Phase 2: Starting...")
+    print("SEO Build Phase 3: Starting...")
     with open("seo.config.json", "r") as f:
         config = json.load(f)
         
     domain = config["canonical_domain"].rstrip("/")
     route_groups = config.get("route_groups", [])
     
-    # Pre-compute routes mapping
-    # Maps file path (relative to public/) to its route info
-    # For a static HTML site without a router, we assume:
-    # id='home' -> en: public/index.html, ar: public/ar/index.html
-    
-    file_to_route = {
-        "public/index.html": ("home", "en"),
-        "public/ar/index.html": ("home", "ar")
-    }
-    
     # 1. Update HTML files
     html_files = glob.glob("public/**/*.html", recursive=True)
     for filepath in html_files:
-        if filepath not in file_to_route:
+        if "mock-" in filepath or "404" in filepath:
             continue
             
-        group_id, lang = file_to_route[filepath]
+        # Determine route id and lang
+        # public/index.html -> home, en
+        # public/ar/index.html -> home, ar
+        # public/pos/index.html -> pos, en
+        # public/ar/pos/index.html -> pos, ar
         
+        parts = filepath.split("/")
+        if len(parts) == 2 and parts[1] == "index.html":
+            group_id = "home"
+            lang = "en"
+        elif len(parts) == 3 and parts[1] == "ar" and parts[2] == "index.html":
+            group_id = "home"
+            lang = "ar"
+        elif len(parts) == 3 and parts[2] == "index.html":
+            group_id = parts[1]
+            lang = "en"
+        elif len(parts) == 4 and parts[1] == "ar" and parts[3] == "index.html":
+            group_id = parts[2]
+            lang = "ar"
+        else:
+            continue
+            
         # Find the route group
         group = next((g for g in route_groups if g["id"] == group_id), None)
         if not group:
@@ -49,7 +58,7 @@ def build():
             
         hreflang_block = "\n    ".join(hreflang_tags)
         
-        # Determine language switcher URL (the *other* language)
+        # Determine language switcher URL
         other_lang = "ar" if lang == "en" else "en"
         lang_switch_url = group.get(other_lang, "/")
         
@@ -60,9 +69,6 @@ def build():
         content = content.replace("{{CANONICAL_DOMAIN}}", domain)
         content = content.replace("{{HREFLANG_TAGS}}", hreflang_block)
         content = content.replace("{{LANG_SWITCH_URL}}", lang_switch_url)
-        
-        # Remove old hreflang block if it already existed and wasn't cleaned (for idempotency)
-        # We will inject {{HREFLANG_TAGS}} right after canonical in our manual HTML update
         
         with open(filepath, "w") as f:
             f.write(content)
@@ -102,7 +108,7 @@ def build():
         f.write(sitemap_content)
     print("Generated public/sitemap.xml")
     
-    print("SEO Build Phase 2: Complete.")
+    print("SEO Build Phase 3: Complete.")
 
 if __name__ == "__main__":
     build()

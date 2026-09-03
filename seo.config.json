@@ -8,47 +8,81 @@
             "x-default": "en",
             "priority": 1.0,
             "changefreq": "weekly"
-        }
-    ],
-    "disallowed_paths": [
-        "/mock-*.html"
-    ],
-    "future_routes_for_part_3": [
+        },
         {
             "id": "pos",
             "en": "/pos/",
             "ar": "/ar/pos/",
-            "x-default": "en"
+            "x-default": "en",
+            "priority": 0.9,
+            "changefreq": "weekly"
         },
         {
             "id": "captain",
             "en": "/captain/",
             "ar": "/ar/captain/",
-            "x-default": "en"
+            "x-default": "en",
+            "priority": 0.8,
+            "changefreq": "monthly"
         },
         {
             "id": "kitchen-display",
             "en": "/kitchen-display/",
             "ar": "/ar/kitchen-display/",
-            "x-default": "en"
+            "x-default": "en",
+            "priority": 0.8,
+            "changefreq": "monthly"
         },
         {
             "id": "restaurant-management",
             "en": "/restaurant-management/",
             "ar": "/ar/restaurant-management/",
-            "x-default": "en"
+            "x-default": "en",
+            "priority": 0.9,
+            "changefreq": "monthly"
+        },
+        {
+            "id": "restaurant-billing",
+            "en": "/restaurant-billing/",
+            "ar": "/ar/restaurant-billing/",
+            "x-default": "en",
+            "priority": 0.7,
+            "changefreq": "monthly"
+        },
+        {
+            "id": "table-management",
+            "en": "/table-management/",
+            "ar": "/ar/table-management/",
+            "x-default": "en",
+            "priority": 0.7,
+            "changefreq": "monthly"
         },
         {
             "id": "offline-pos",
             "en": "/offline-pos/",
             "ar": "/ar/offline-pos/",
-            "x-default": "en"
+            "x-default": "en",
+            "priority": 0.8,
+            "changefreq": "monthly"
+        },
+        {
+            "id": "real-time-sync",
+            "en": "/real-time-sync/",
+            "ar": "/ar/real-time-sync/",
+            "x-default": "en",
+            "priority": 0.7,
+            "changefreq": "monthly"
         },
         {
             "id": "owner-dashboard",
             "en": "/owner-dashboard/",
             "ar": "/ar/owner-dashboard/",
-            "x-default": "en"
+            "x-default": "en",
+            "priority": 0.8,
+            "changefreq": "monthly"
         }
+    ],
+    "disallowed_paths": [
+        "/mock-*.html"
     ]
 }

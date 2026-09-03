@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restova Offline POS — Keep Your Restaurant Running Without Internet</title>
+    <link rel="canonical" href="https://restova.com/offline-pos/">
+    
+    <link rel="alternate" hreflang="en" href="https://restova.com/offline-pos/">
+    <link rel="alternate" hreflang="ar" href="https://restova.com/ar/offline-pos/">
+    <link rel="alternate" hreflang="x-default" href="https://restova.com/offline-pos/">
+    
+    <!-- Open Graph -->
+    <meta property="og:url" content="https://restova.com/offline-pos/">
+
+    <meta property="og:site_name" content="Restova">
+    <meta property="og:title" content="Restova Offline POS — Keep Your Restaurant Running Without Internet">
+    <meta property="og:description" content="Restova’s offline restaurant POS keeps your business operating smoothly. Take orders and print KOTs even when the internet drops. Auto-syncs when back online.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://restova.com/offline-pos/">
+    <meta property="og:image" content="https://restova.com/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Restova Offline POS — Keep Your Restaurant Running Without Internet">
+    <meta name="twitter:description" content="Restova’s offline restaurant POS keeps your business operating smoothly. Take orders and print KOTs even when the internet drops. Auto-syncs when back online.">
+    <meta name="twitter:image" content="https://restova.com/images/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/logo.png">
+    
+    <!-- Fonts & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css?v=25">
+
+
+
+    <script>
+        // Professional language auto-detection & routing
+        (function() {
+            try {
+                if (localStorage.getItem('restova_lang') === 'en') return;
+                if (localStorage.getItem('restova_lang') === 'ar') {
+                    window.location.replace('/ar/');
+                    return;
+                }
+                const userLang = navigator.language || navigator.userLanguage;
+                if (userLang.toLowerCase().startsWith('ar')) {
+                    window.location.replace('/ar/');
+                }
+            } catch(e) {}
+        })();
+    </script>
+</head>
+<body>
+
+
+<!-- ═══════════════════════════════════════ -->
+<!-- NAVIGATION                             -->
+<!-- ═══════════════════════════════════════ -->
+<nav id="navbar">
+    <div class="nav-inner container">
+        <a href="#" class="nav-logo">
+            <img src="/logo.png" alt="Restova" width="36" height="36">
+            <span>Restova</span>
+        </a>
+        <div class="nav-links" id="navLinks">
+            <a href="#products">Products</a>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#faq">FAQ</a>
+        </div>
+        <div class="nav-actions">
+            <a href="/ar/" class="lang-switch" onclick="localStorage.setItem('restova_lang', 'ar')">العربية</a>
+            <a href="#register" class="btn-primary btn-sm">Register Restaurant</a>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+    <section class="section section-alt" style="padding-top: 120px;">
+        <div class="container">
+            <div class="section-header" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h1 class="section-title" style="font-size: 3rem; margin-bottom: 20px;">Offline Restaurant POS</h1>
+                <p class="section-subtitle">Your restaurant never stops. Neither should your POS.</p>
+            </div>
+            
+            <div class="product-content reveal" style="max-width: 900px; margin: 40px auto; font-size: 1.1rem; line-height: 1.8; color: var(--text-s);">
+                
+                <p>Internet outages shouldn't mean operations halt. The Restova Offline POS ensures that your core restaurant workflows continue uninterrupted when connectivity is lost.</p>
+                <div class="product-visual"><img src="/images/wf-6-sales.png" alt="Restova offline POS synchronization"></div>
+                <h3>How It Works</h3>
+                <p>Data is persisted locally. You can still punch orders, print to the kitchen, and settle tables. Once the internet returns, Restova leverages powerful <a href="/real-time-sync/">synchronization algorithms</a> to push all queued changes to the cloud automatically.</p>
+            
+            </div>
+            
+            <div class="faq-container reveal" style="max-width: 800px; margin: 60px auto;">
+                <h3 style="text-align: center; margin-bottom: 30px; font-size: 2rem;">FAQ</h3>
+                
+        <div class="faq-item">
+            <div class="faq-question"><span>What happens when the internet goes down?</span><span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p>The POS switches to local operation mode. You can continue taking orders and printing KOTs.</p></div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question"><span>What happens when the connection returns?</span><span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p>All locally queued transactions are automatically synced to the cloud without manual intervention.</p></div>
+        </div>
+        
+            </div>
+            
+            <div class="related-products reveal" style="max-width: 800px; margin: 80px auto; text-align: center; border-top: 1px solid var(--border); padding-top: 40px;">
+                <h4 style="margin-bottom: 20px; color: var(--text);">Explore Restova:</h4>
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="/pos/" class="btn-secondary btn-sm">POS</a>
+                    <a href="/captain/" class="btn-secondary btn-sm">Captain App</a>
+                    <a href="/kitchen-display/" class="btn-secondary btn-sm">Kitchen Display</a>
+                    <a href="/restaurant-management/" class="btn-secondary btn-sm">Restaurant Management</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- REGISTER                                -->
+<!-- ═══════════════════════════════════════ -->
+<section id="register" class="section section-dark">
+    <div class="container">
+        <div class="register-layout reveal">
+            <div class="register-info">
+                <span class="section-eyebrow" style="color:#e63946">Get Started</span>
+                <h2 class="section-title" style="color:#fff">Register your restaurant.</h2>
+                <p style="color:rgba(255,255,255,.6);font-size:1.05rem;line-height:1.7;margin-bottom:2rem">Fill in your details and our team will set up your complete Restova system within 24 hours. No credit card required to start.</p>
+                <div class="trust-points">
+
+                    <div class="trust-point">
+                        <span class="trust-icon">🔧</span>
+                        <div>
+                            <strong>Full Configuration</strong>
+                            <span>Menu, tables, tax — all set up for you</span>
+                        </div>
+                    </div>
+                    <div class="trust-point">
+                        <span class="trust-icon">📞</span>
+                        <div>
+                            <strong>Direct Support</strong>
+                            <span>WhatsApp + email support from day one</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form class="register-form" id="registerForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="regName">Restaurant Name *</label>
+                        <input type="text" id="regName" required placeholder="e.g. King Chinese Bowl">
+                    </div>
+                    <div class="form-group">
+                        <label for="regOwner">Owner Name *</label>
+                        <input type="text" id="regOwner" required placeholder="e.g. Aamir Khan">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="regPhone">Phone *</label>
+                        <input type="tel" id="regPhone" required placeholder="+91 98765 43210">
+                    </div>
+                    <div class="form-group">
+                        <label for="regEmail">Email *</label>
+                        <input type="email" id="regEmail" required placeholder="owner@restaurant.com">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="regCity">City *</label>
+                        <input type="text" id="regCity" required placeholder="e.g. Chandigarh">
+                    </div>
+                    <div class="form-group">
+                        <label for="regTables">Number of Tables</label>
+                        <input type="number" id="regTables" placeholder="e.g. 20" min="1">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="regCurrentPOS">Current POS System</label>
+                    <select id="regCurrentPOS">
+                        <option value="">Select...</option>
+                        <option value="none">No POS — using paper/manual</option>
+                        <option value="petpooja">Petpooja</option>
+                        <option value="posist">Posist</option>
+                        <option value="torqus">Torqus</option>
+                        <option value="dotpe">DotPe</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="regMessage">Message (optional)</label>
+                    <textarea id="regMessage" rows="3" placeholder="Tell us about your restaurant or any specific requirements..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary btn-lg btn-block" id="registerBtn">
+                    Register via WhatsApp
+                </button>
+                <p class="form-note">We'll contact you on WhatsApp within 24 hours to set up your restaurant.</p>
+                <div class="form-success" id="formSuccess" style="display:none">
+                    <div class="success-icon">✅</div>
+                    <h3>Registration Sent!</h3>
+                    <p>We've received your details. Our team will contact you on WhatsApp within 24 hours.</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- FOOTER                                  -->
+<!-- ═══════════════════════════════════════ -->
+<footer id="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="/logo.png" alt="Restova" width="32" height="32">
+                    <span>Restova</span>
+                </div>
+                <p>Complete restaurant operating system. POS, Captain App, and Kitchen Display — connected in real time.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Products</h4>
+                <a href="#products">Restova POS</a>
+                <a href="#products">Captain App</a>
+                <a href="#products">Kitchen Display</a>
+                <a href="#hq">Restova HQ</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+                <a href="#register">Register</a>
+                <a href="mailto:aamirldz07@gmail.com">Support</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="mailto:aamirldz07@gmail.com">aamirldz07@gmail.com</a>
+                <a href="https://wa.me/919939525676" target="_blank">+91 9939525676</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Restova Technologies Pvt. Ltd. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="/main.js?v=8"></script>
+</body>
+</html>

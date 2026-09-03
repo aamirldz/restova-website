@@ -5220,16 +5220,26 @@ html, body {
 }
 
 /* RTL OVERRIDES */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
+
 html[dir="rtl"] {
     text-align: right;
+    font-family: 'Cairo', 'Inter', sans-serif !important;
+}
+html[dir="rtl"] body,
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] p,
+html[dir="rtl"] a,
+html[dir="rtl"] button {
+    font-family: 'Cairo', 'Inter', sans-serif !important;
 }
 html[dir="rtl"] .hero-product-stage,
 html[dir="rtl"] .workflow-visual {
     /* Prevent device hardware from flipping and breaking layout */
     direction: ltr !important;
-}
-html[dir="rtl"] .nav-inner {
-    flex-direction: row-reverse;
 }
 html[dir="rtl"] .hero-inner,
 html[dir="rtl"] .product-content {
@@ -5239,5 +5249,5 @@ html[dir="rtl"] .workflow-step {
     text-align: right;
 }
 html[dir="rtl"] .btn-primary {
-    font-family: inherit;
+    font-family: 'Cairo', 'Inter', sans-serif !important;
 }

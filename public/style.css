@@ -5089,14 +5089,15 @@ footer {
         display: block !important;
         position: relative !important;
         min-height: 400px !important;
-        transform: scale(0.65) !important;
+        transform: scale(0.95) !important;
         transform-origin: top center !important;
-        margin-bottom: -160px !important;
+        margin-bottom: -50px !important;
     }
-    .device-desktop .device-bezel { width: 460px !important; }
-    .device-macbook { width: 340px !important; left: -100px !important; bottom: -30px !important; }
-    .device-tablet { width: 220px !important; right: -40px !important; bottom: 0 !important; }
-    .device-phone { width: 100px !important; left: -60px !important; bottom: 220px !important; }
+    .device-desktop .device-bezel { width: 520px !important; }
+    .device-tablet { width: 260px !important; right: -20px !important; bottom: -40px !important; z-index: 5 !important; }
+    .device-tablet .device-bezel { width: 260px !important; }
+    .device-phone { width: 120px !important; left: -40px !important; bottom: 40px !important; z-index: 6 !important; }
+    .device-phone .device-bezel { width: 120px !important; }
 
     /* Pricing */
     .pricing-cards { grid-template-columns: 1fr !important; max-width: 400px !important; margin: 0 auto !important; }
@@ -5142,14 +5143,15 @@ footer {
         display: block !important;
         position: relative !important;
         min-height: 400px !important;
-        transform: scale(0.5) !important;
+        transform: scale(0.65) !important; /* Huge increase from 0.5 to 0.65 for max visibility */
         transform-origin: top center !important;
-        margin-bottom: -220px !important;
+        margin-bottom: -120px !important; /* Pull up content to remove dead space */
     }
-    .device-desktop .device-bezel { width: 460px !important; }
-    .device-macbook { width: 340px !important; left: -100px !important; bottom: -30px !important; }
-    .device-tablet { width: 220px !important; right: -40px !important; bottom: 0 !important; }
-    .device-phone { width: 100px !important; left: -60px !important; bottom: 220px !important; }
+    .device-desktop .device-bezel { width: 520px !important; }
+    .device-tablet { width: 260px !important; right: -20px !important; bottom: -40px !important; z-index: 5 !important; }
+    .device-tablet .device-bezel { width: 260px !important; }
+    .device-phone { width: 120px !important; left: -20px !important; bottom: 40px !important; z-index: 6 !important; }
+    .device-phone .device-bezel { width: 120px !important; }
 
     /* Stats row */
     .hero-stats { flex-direction: row !important; flex-wrap: wrap !important; justify-content: center !important; gap: 16px !important; }

@@ -5093,3 +5093,16 @@ footer {
 .device-phone .device-bezel::after {
     display: none !important;
 }
+
+/* ═══════ GLOBAL OVERFLOW FIX ═══════ */
+/* Prevent horizontal scroll caused by scaled/absolute-positioned elements */
+html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+}
+#hero {
+    overflow: hidden !important;
+}
+.hero-product-stage {
+    overflow: visible !important; /* Let devices render visually */
+}
